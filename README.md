@@ -10,6 +10,12 @@
 
 ## Quick Start
 
+Nel momento in cui si vuole creare una nuova applicazione è necessario definire il repository remoto
+
+    ssh git@git.netwing.it
+    git init --shared --bare /home/git/<app_name>
+    chmod -R 755 /home/git/<app_name>
+
 ### Clonare YiiApp per creare una nuova applicazione
 
 Posizionarsi nella directory *all'interno* della quale si vuole creare il progetto.
@@ -19,12 +25,6 @@ Posizionarsi nella directory *all'interno* della quale si vuole creare il proget
 Se la directory non è vuota, eliminare il contenuto, oppure effettuare il clone in una directory temporanea e successivamente spostare tutto dentro alla directory di lavoro.
 
 ***Importantissimo: Cambiare ORIGIN alla nuova app prima di iniziare a fare delle modifiche !!!***
-
-Creare il *nuovo* repository remoto [SOLO se necessario]
-
-    ssh git@git.netwing.it
-    git init --shared --bare /home/git/<app_name>
-    chmod -R 755 /home/git/<app_name>
 
 Settare la nuova origine
 
