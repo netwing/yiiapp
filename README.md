@@ -5,8 +5,13 @@
 ## Requisiti
 
 * Git [http://git-scm.com](http://git-scm.com)
+Può essere installato dal package manager della propria distribuzione
+
 * Node [http://nodejs.org](http://nodejs.org)
+Scaricare ed installare il package provveduto dallo sviluppatore
+
 * Bower installato globalmente [http://bower.io](http://bower.io)
+Con i permessi di root, eseguire `npm install -g bower`
 
 ## Quick Start
 
