@@ -1,0 +1,23 @@
+{
+    "name": "Application",
+    "version": "1.0.0",
+    "authors": [
+    "Emanuele Deserti <emanuele.deserti@netwing.it>"
+    ],
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+    ],
+    "dependencies": {
+        "font-awesome": "v3.2.1",
+        "jquery-minicolors": "2.1.1",
+        "jquery-timepicker-addon": "git://github.com/trentrichardson/jQuery-Timepicker-Addon.git",
+        "fullcalendar": "1.6.4",
+        "highcharts": "v3.0.5"
+    }
+}

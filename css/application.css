@@ -1,0 +1,4 @@
+.grid-view .table .filters > td .filter-container select {
+  margin-bottom: 0;
+  width: 100%;
+}
