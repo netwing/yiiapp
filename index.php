@@ -10,11 +10,7 @@ define('YII_TRACE_LEVEL', $yii_trace_level);
 
 // *** YII FRAMEWORK LOAD ***
 // Include base yii class
-require_once dirname(__FILE__) . '/yii/framework/yii.php';
-
-// *** YII AWARE CUSTOMIZATION
-// Path for bootstrap extensions
-Yii::setPathOfAlias('bootstrap', dirname(__FILE__) . '/protected/extensions/yiistrap');
+require_once dirname(__FILE__) . '/vendor/yiisoft/yii/framework/yii.php';
 
 // *** YII CREATE APPLICATION
 // Create application
@@ -22,6 +18,11 @@ $app = Yii::createWebApplication($config);
 
 // *** YII APPLICATION CUSTOMIZATION
 // Write here your own customization if needed
+if (isset($app->request)) {
+    if ($app->request->getPreferredLanguage()) {
+        $app->language = $app->request->getPreferredLanguage();
+    }
+}
 
 // Execute application
 $app->run();

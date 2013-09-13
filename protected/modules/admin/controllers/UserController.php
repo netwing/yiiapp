@@ -8,6 +8,19 @@ class UserController extends Controller
     */
     public $layout='//layouts/column2';
 
+    public $menu = array();
+
+    public function init()
+    {
+        parent::init();
+        $this->menu = array(
+            array('label' => Yii::t('menu', 'Manage users'),'url'=>array('/admin/user/admin')),
+            array('label' => Yii::t('menu', 'Create user'),'url'=>array('/admin/user/create')),
+            array('label' => Yii::t('menu', 'Manage roles'), 'url'=>array('/admin/role/admin')),
+            array('label' => Yii::t('menu', 'Create role'), 'url'=>array('/admin/role/create')),
+        );        
+    }
+
     /**
     * @return array action filters
     */
@@ -28,8 +41,8 @@ class UserController extends Controller
         return array(
             array('allow', 'actions' => array('index', 'view', 'admin'), 'roles' => array('admin:user:read')),
             array('allow', 'actions' => array('create'), 'roles' => array('admin:user:create')),
-            array('allow', 'actions' => array('update', 'view', 'admin'), 'roles' => array('admin:user:update')),
-            array('allow', 'actions' => array('delete', 'view', 'admin'), 'roles' => array('admin:user:delete')),
+            array('allow', 'actions' => array('update'), 'roles' => array('admin:user:update')),
+            array('allow', 'actions' => array('delete'), 'roles' => array('admin:user:delete')),
             array('deny', 'users'=>array('*')),
         );
     }

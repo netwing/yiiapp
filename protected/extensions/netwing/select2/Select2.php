@@ -87,7 +87,7 @@ class Select2 extends CApplicationComponent
                 $excludeFiles, 
                 array('LICENSE', 'README.md', 'bower.json', 'release.sh')
             );
-            $assetsPath = Yii::getPathOfAlias('application.vendors.select2');
+            $assetsPath = Yii::getPathOfAlias('bower.select2');
             $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
             return $this->_assetsUrl = $assetsUrl;
         }

@@ -14,14 +14,14 @@ class DefaultController extends Controller
 
     public function actionMessages()
     {
-        Yii::app()->user->setFlash(TbHtml::ALERT_COLOR_ERROR,
-            '<strong>ERROR!</strong> Nulla vitae elit libero, a pharetra augue.');
-        Yii::app()->user->setFlash(TbHtml::ALERT_COLOR_WARNING,
+        Yii::app()->user->setFlash('warning',
             '<strong>Warning!</strong> Nulla vitae elit libero, a pharetra augue.');
-        Yii::app()->user->setFlash(TbHtml::ALERT_COLOR_INFO,
+        Yii::app()->user->setFlash('info',
             '<strong>Information!</strong> Nulla vitae elit libero, a pharetra augue.');
-        Yii::app()->user->setFlash(TbHtml::ALERT_COLOR_SUCCESS,
+        Yii::app()->user->setFlash('success',
             '<strong>Success!</strong> Nulla vitae elit libero, a pharetra augue.');
+        Yii::app()->user->setFlash('danger',
+            '<strong>ERROR!</strong> Nulla vitae elit libero, a pharetra augue.');
 
         $this->redirect(array("/example/default/index"));
 
@@ -49,6 +49,11 @@ class DefaultController extends Controller
     public function actionNode()
     {
         $this->render('node');
+    }
+
+    public function actionDnd()
+    {
+        $this->render('dnd');
     }
 
 }

@@ -2,29 +2,42 @@
 
 <p><?php echo Yii::t('app', 'Please fill out the following form with your login credentials:'); ?></p>
 
-<?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+<?php $form = $this->beginWidget('CActiveForm', array(
     'id'=>'login-form',
     'enableClientValidation'=>true,
-    'clientOptions'=>array(
-        'validateOnSubmit'=>true,
-    ),
-    'layout' => TbHtml::FORM_LAYOUT_HORIZONTAL,
-    'htmlOptions'=>array('class'=>'well'),
+    'enableAjaxValidation'=>true,
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+    'errorMessageCssClass' => 'text-danger'
 )); ?>
 
-    <fieldset>
+<fieldset>
 
     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
-        <?php echo $form->textFieldControlGroup($model,'username'); ?>
-        <?php echo $form->passwordFieldControlGroup($model,'password'); ?>
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'username', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <?php echo $form->textField($model,'username', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'username'); ?>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'password', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+            <?php echo $form->passwordField($model,'password', array('class' => 'form-control')); ?>
+            <?php echo $form->error($model,'password'); ?>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-4">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </div>
 
     <p class="note">You can login with <i>administrator : password</i> or <i>simpleuser : simpleuser</i></p>
 
-    </fieldset>
-
-    <div class="form-actions">
-        <?php echo TbHtml::submitButton('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
-    </div>
+</fieldset>
 
 <?php $this->endWidget(); ?>

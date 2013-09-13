@@ -6,9 +6,9 @@ class PdfController extends Controller
 	{
         $this->layout = '//layouts/pdfcolumn1';
         $html = $this->render('download', array(), true);
-        // echo $html; Yii::app()->end();
+        // echo $html; Yii::app()->end();        
 
-        include(APPLICATION_PATH . "/vendors/mpdf/mpdf.php");
+        require_once Yii::getPathOfAlias('webroot.vendor.mpdf.mpdf') . "/mpdf.php";
 
         $mpdf = new mPDF('c',    // mode - default ''
             array(210, 297),    // format - A4, for example, default ''
@@ -23,7 +23,7 @@ class PdfController extends Controller
             'P');  // L - landscape, P - portrait
 
         $mpdf->WriteHTML($html);
-        $mpdf->Output();
+        $mpdf->Output('pdftest.pdf', 'D');
         Yii::app()->end();
     }
 

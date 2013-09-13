@@ -8,6 +8,17 @@ class RoleController extends Controller
     */
     public $layout='//layouts/column2';
 
+    public function init()
+    {
+        parent::init();
+        $this->menu = array(
+            array('label' => Yii::t('menu', 'Manage users'),'url'=>array('/admin/user/admin')),
+            array('label' => Yii::t('menu', 'Create user'),'url'=>array('/admin/user/create')),
+            array('label' => Yii::t('menu', 'Manage roles'), 'url'=>array('/admin/role/admin')),
+            array('label' => Yii::t('menu', 'Create role'), 'url'=>array('/admin/role/create')),
+        );        
+    }
+
     /**
     * @return array action filters
     */
@@ -15,7 +26,6 @@ class RoleController extends Controller
     {
         return array(
             'accessControl', // perform access control for CRUD operations
-            'postOnly + delete', // we only allow deletion via POST request
         );
     }
 
@@ -29,8 +39,8 @@ class RoleController extends Controller
         return array(
             array('allow', 'actions' => array('index', 'view', 'admin'), 'roles' => array('admin:user:read')),
             array('allow', 'actions' => array('create'), 'roles' => array('admin:user:create')),
-            array('allow', 'actions' => array('update', 'view', 'admin'), 'roles' => array('admin:user:update')),
-            array('allow', 'actions' => array('delete', 'view', 'admin'), 'roles' => array('admin:user:delete')),
+            array('allow', 'actions' => array('update'), 'roles' => array('admin:user:update')),
+            array('allow', 'actions' => array('delete'), 'roles' => array('admin:user:delete')),
             array('deny', 'users'=>array('*')),
         );
     }
@@ -55,13 +65,15 @@ class RoleController extends Controller
         $model = new AuthItem;
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+        $this->performAjaxValidation($model);
 
-        if(isset($_POST['AuthItem']))
+        if (isset($_POST['AuthItem']))
         {
-            $model->attributes=$_POST['AuthItem'];
-            if($model->save()) {
-                $this->redirect(array('view','id'=>$model->name));
+            $model->attributes = $_POST['AuthItem'];
+            if ($model->validate()) {
+                Yii::app()->authManager->createRole(strtoupper($model->name), $model->description);
+                Yii::app()->user->setFlash('success', Yii::t('app', 'Permissions successfully saved, please set permissions.')); 
+                $this->redirect(array('update', 'id'=>$model->name));
             }
         }
 
@@ -80,8 +92,8 @@ class RoleController extends Controller
         $model=$this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-        if(isset($_POST['AuthItem'])) {
+        $this->performAjaxValidation($model);
+        if (isset($_POST['AuthItem'])) {
             // Delete all child from this role
             $cmd = Yii::app()->db->createCommand("DELETE FROM {{auth_item_child}} WHERE parent = :parent")->bindValue(':parent', $model->name);
             $cmd->execute();
@@ -89,12 +101,12 @@ class RoleController extends Controller
             if($model->save()) {
                 foreach ($_POST as $key => $value) {
                     if (substr($key, 0, 9) == 'authChild' and is_array($value)) {
-                        foreach ($value as $item)
-                        Yii::app()->authManager->addItemChild($model->name, $item);
-
+                        foreach ($value as $item) {
+                            Yii::app()->authManager->addItemChild($model->name, $item);
+                        }
                     }
                 }
-                Yii::app()->authManager->save();
+                // Yii::app()->authManager->save();
                 Yii::app()->user->setFlash('success', Yii::t('app', 'Permissions successfully saved.'));
                 $this->redirect(array('view','id'=>$model->name));
             }
@@ -114,11 +126,16 @@ class RoleController extends Controller
     {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
-            $this->loadModel($id)->delete();
+            $model = $this->loadModel($id);
+            $esit = $model->delete();
 
-        // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if(!isset($_GET['ajax'])) {
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            } else {
+                if ($esit === false) {
+                    echo Yii::t("app", "Unable to delete selected role");
+                }
             }
         } else {
             throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
@@ -130,9 +147,10 @@ class RoleController extends Controller
     */
     public function actionIndex()
     {
-        $dataProvider=new CActiveDataProvider('AuthItem');
+        $model = new AuthItem();
+        $model->type = CAuthItem::TYPE_ROLE;
         $this->render('index',array(
-            'dataProvider'=>$dataProvider,
+            'dataProvider'=>$model->search(),
         ));
     }
 

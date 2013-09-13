@@ -15,68 +15,73 @@
 </p>
 
 
-<div class="form">
-
-    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-    'id' => 'publisher-form',
-    // Please note: When you enable ajax validation, make sure the corresponding
-    // controller action is handling ajax validation correctly.
-    // There is a call to performAjaxValidation() commented in generated controller code.
-    // See class documentation of CActiveForm for details on this.
+<?php $form = $this->beginWidget('CActiveForm', array(
+    'id' => 'datetime-form',
     'enableAjaxValidation'  => true,
-    'stateful'              => true,
-    'layout'                => TbHtml::FORM_LAYOUT_HORIZONTAL
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+    'errorMessageCssClass' => 'text-danger'
 )); ?>
 
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
     <?php echo $form->errorSummary($model); ?>
-    <?php 
-        $datepicker = $this->widget('ext.netwing.widgets.JuiDatePicker', array(
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'my_date', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php $datepicker = $this->widget('ext.netwing.widgets.JuiDatePicker', array(
+            'htmlOptions' => array('class' => 'form-control'),
             'model' => $model,
             'attribute' => 'my_date',
-        ), true);
-    ?>
+        )); ?>
+        <?php echo $form->error($model,'my_date'); ?>
+        </div>
+    </div>
 
-    <?php echo TbHtml::customActiveControlGroup($datepicker, $model, 'my_date', array()); ?>
-
-    <?php 
-        $datepicker = $this->widget('ext.netwing.widgets.JuiDatePicker', array(
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'my_another_date', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php $datepicker = $this->widget('ext.netwing.widgets.JuiDatePicker', array(
+            'htmlOptions' => array('class' => 'form-control'),
             'name' => 'my_another_date',
             'value' => '2013-10-11',
-        ), true);
-    ?>
+        )); ?>
+        <?php echo $form->error($model,'my_another_date'); ?>
+        </div>
+    </div>
 
-    <?php echo TbHtml::customControlGroup($datepicker, 'my_another_date', array()); ?>
-
-    <?php 
-        $timepicker = $this->widget('ext.netwing.widgets.JuiTimePicker', array(
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'my_time', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php $timepicker = $this->widget('ext.netwing.widgets.JuiTimePicker', array(
+            'htmlOptions' => array('class' => 'form-control'),
             'model' => $model,
             'attribute' => 'my_time',
-        ), true);
-    ?>
+        )); ?>
+        <?php echo $form->error($model,'my_time'); ?>
+        </div>
+    </div>
 
-    <?php echo TbHtml::customActiveControlGroup($timepicker, $model, 'my_time', array()); ?>
-
-    <?php 
-        $timepicker = $this->widget('ext.netwing.widgets.JuiTimePicker', array(
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'my_another_time', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php $timepicker = $this->widget('ext.netwing.widgets.JuiTimePicker', array(
+            'htmlOptions' => array('class' => 'form-control'),
             'name' => 'my_another_time',
             'value' => '18:29:59',
-        ), true);
-    ?>
-
-    <?php echo TbHtml::customControlGroup($timepicker, 'my_another_time', array()); ?>
-
-        <div class="form-actions">
-        <?php echo TbHtml::submitButton('Save', array(
-            'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
-            'size'=>TbHtml::BUTTON_SIZE_LARGE,
         )); ?>
+        <?php echo $form->error($model,'my_another_time'); ?>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="reset" class="btn btn-warning"><?php echo Yii::t('form', 'Reset'); ?></button>
+            <button type="submit" class="btn btn-primary"><?php echo Yii::t('form', 'Submit'); ?></button>
+        </div>
     </div>
 
     <?php $this->endWidget(); ?>
-
-</div><!-- form -->
 
 <?php if (count($_POST) > 0): ?>
 <?php CVarDumper::dump($_POST, 10, true); ?>

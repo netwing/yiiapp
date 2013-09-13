@@ -131,19 +131,7 @@ class JuiTimePicker extends CJuiDatePicker
             throw new Exception("This widget do not support FLAT mode yet");
         }
 
-        // Publish assets
-        $assetsPath = Yii::getPathOfAlias('application.vendors.timepicker.dist');
-        $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1);
-
-        // Register css
-        $fileName = YII_DEBUG ? 'jquery-ui-timepicker-addon.css' : 'jquery-ui-timepicker-addon.min.css';
-        $url = $assetsUrl . "/" . $fileName;
-        Yii::app()->getClientScript()->registerCssFile($url);
-
-        // Register js
-        $fileName = YII_DEBUG ? 'jquery-ui-timepicker-addon.js' : 'jquery-ui-timepicker-addon.min.js';
-        $url = $assetsUrl . "/" . $fileName;
-        Yii::app()->getClientScript()->registerScriptFile($url, CClientScript::POS_END);
+        Yii::app()->timepicker->register();
 
         $options=CJavaScript::encode($this->options);
         $js = "jQuery('#{$id}_user').timepicker($options);";
@@ -151,7 +139,7 @@ class JuiTimePicker extends CJuiDatePicker
         if($this->language!='' && $this->language!='en')
         {
             $fileName = 'i18n/jquery-ui-timepicker-' . $this->language . '.js';
-            $url = $assetsUrl . "/" . $fileName;
+            $url = Yii::app()->timepicker->getAssetsUrl() . "/" . $fileName;
             Yii::app()->getClientScript()->registerScriptFile($url, CClientScript::POS_END);
             $js = "jQuery('#{$id}_user').timepicker(jQuery.extend(jQuery.timepicker.regional['{$this->language}'],{$options}));";
         }
@@ -166,7 +154,7 @@ class JuiTimePicker extends CJuiDatePicker
         if(isset($this->defaultOptions))
         {
             $fileName = 'i18n/jquery-ui-timepicker-' . $this->language . '.js';
-            $url = $assetsUrl . "/" . $fileName;
+            $url = Yii::app()->timepicker->getAssetsUrl() . "/" . $fileName;
             Yii::app()->getClientScript()->registerScriptFile($url, CClientScript::POS_END);
             $cs->registerScript(__CLASS__,$this->defaultOptions!==null?'jQuery.timepicker.setDefaults('.CJavaScript::encode($this->defaultOptions).');':'');
         }

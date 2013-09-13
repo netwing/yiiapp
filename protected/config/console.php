@@ -28,6 +28,7 @@ $yii_trace_level = $yiic_trace_level;
 
 $config['params']['console'] = true;
 $config['import'][] = 'ext.EConsoleCommand.EConsoleCommand';
+unset($config['components']['log']['routes']['toolbar']);
 
 if (isset($config['theme'])) {
     unset($config['theme']);    

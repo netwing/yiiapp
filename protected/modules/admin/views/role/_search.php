@@ -1,22 +1,29 @@
-<?php
-/* @var $this RoleController */
-/* @var $model AuthItem */
-/* @var $form CActiveForm */
-?>
-
-<div class="wide form">
-
-    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
+<?php $form=$this->beginWidget('CActiveForm',array(
+    'action'=>Yii::app()->createUrl($this->route),
+    'method'=>'get',
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
 )); ?>
-            <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>64)); ?>
-            <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>6,'span'=>8)); ?>
 
-        <div class="form-actions">
-        <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'name', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <?php echo $form->textField($model,'name', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'name'); ?>
+        </div>
     </div>
 
-    <?php $this->endWidget(); ?>
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'description', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <?php echo $form->textField($model,'description', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'description'); ?>
+        </div>
+    </div>
 
-</div><!-- search-form -->
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-4">
+            <button type="submit" class="btn btn-primary"><?php echo Yii::t('app', 'Search');?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>

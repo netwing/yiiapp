@@ -19,7 +19,7 @@ class Cron extends CApplicationComponent
      */
     public function init()
     {
-        Yii::setPathOfAlias('Cron', Yii::getPathOfAlias('application.vendors.cron.src.Cron'));
+        Yii::setPathOfAlias('Cron', Yii::getPathOfAlias('webroot.vendor.mtdowling.cron-expression.src.Cron'));
     }
 
     /**

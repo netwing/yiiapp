@@ -35,8 +35,9 @@ class EThemePicker extends CPortlet
     public $dropDownOptions = array(
         'submit'    => '',
         'csrf'      => true, 
-        'class'     => 'themeSelector input-small', 
+        'class'     => 'form-control input-sm themeSelector', 
         'id'        => 'themeSelector',
+        'style'     => 'width: 150px;',        
     );
 
     public function init()

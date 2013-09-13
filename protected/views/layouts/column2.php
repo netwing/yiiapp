@@ -2,33 +2,40 @@
 <?php $this->beginContent('//layouts/main'); ?>
 
 <?php if(isset($this->breadcrumbs) and count($this->breadcrumbs) > 0): ?>
-<div class="row-fluid">
-    <div class="span12">
-    <?php echo TbHtml::breadcrumbs($this->breadcrumbs); ?>
+<div class="row">
+    <div class="col-lg-12">
+    <?php 
+    $this->widget('zii.widgets.CBreadcrumbs', array(
+        'links'         => $this->breadcrumbs,
+        'tagName'       => 'ol',
+        'htmlOptions'   => array('class' => 'breadcrumb'),
+    )); 
+    ?>
     </div>
 </div>
 <?php endif; ?>
 
-<div class="row-fluid">
-    <div class="span12">
+<div class="row">
+    <div class="col-lg-12">
         <h2><?php echo $this->pageTitle; ?></h2>
     </div>
 </div>
 
-<div class="row-fluid">
-    <div class="span9">
-        <?php echo $content; ?>
+<div class="row">
+    <div class="col-md-3 col-md-push-9">
+        <div id="sidebar">
+        <?php 
+            $this->widget('ext.netwing.bootstrap.widgets.Menu', array(
+                'encodeLabel'   => false,
+                'items' => $this->menu,
+                'htmlOptions'   => array('class' => 'list-group'),
+                'itemCssClass'  => 'list-group-item',
+            ));
+        ?>
+        </div>            
     </div>
-    <div class="span3">
-        <div id="sidebar" class="well">
-            <?php 
-                // array_unshift($this->menu, array('label' => Yii::t('widget', 'Operations')));
-                $this->widget('bootstrap.widgets.TbNav', array(
-                    'type' => TbHtml::NAV_TYPE_LIST,
-                    'items' => $this->menu,
-                ));
-            ?>
-        </div><!-- sidebar -->
+    <div class="col-md-9 col-md-pull-3">
+        <?php echo $content; ?>
     </div>
 </div>
 

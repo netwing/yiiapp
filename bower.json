@@ -17,6 +17,7 @@
         "font-awesome": "v3.2.1",
         "jquery-minicolors": "2.1.1",
         "jquery-timepicker-addon": "git://github.com/trentrichardson/jQuery-Timepicker-Addon.git",
+        "select2": "3.4.2",
         "fullcalendar": "1.6.4",
         "highcharts": "v3.0.5"
     }

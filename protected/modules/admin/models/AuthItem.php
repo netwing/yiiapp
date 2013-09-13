@@ -33,13 +33,14 @@ class AuthItem extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, type', 'required'),
+			array('name', 'required'),
 			array('type', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>64),
-			array('description, bizrule, data', 'safe'),
+			array('type, description, bizrule, data', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('name, type', 'safe', 'on'=>'search'),
+            array('type', 'default', 'value' => CAuthItem::TYPE_ROLE),
 		);
 	}
 
@@ -107,4 +108,15 @@ class AuthItem extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function beforeDelete()
+    {
+        $cmd = Yii::app()->db->createCommand("SELECT COUNT(*) FROM {{user}} WHERE role LIKE :parent")->bindValue(':parent', '%' . $this->name . '%');
+        $count = $cmd->queryScalar();
+        if (intval($count) > 0) {
+            return false;
+        }
+        return parent::beforeDelete();
+    }
+
 }

@@ -1,14 +1,4 @@
 <?php
-
-$this->menu=array(
-    array('label' => Yii::t('menu', 'User operations')),
-    array('label' => Yii::t('menu', 'Manage users'),'url'=>array('user/admin')),
-    array('label' => Yii::t('menu', 'Create user'),'url'=>array('user/create')),
-    array('label' => Yii::t('menu', 'Roles operations')),
-    array('label' => Yii::t('menu', 'Manage roles'), 'url'=>array('role/admin')),
-    array('label' => Yii::t('menu', 'Create role'), 'url'=>array('role/create')),
-);
-
 Yii::app()->clientScript->registerScript('search', "
     $('.search-button').click(function(){
         $('.search-form').toggle();
@@ -30,15 +20,37 @@ Yii::app()->clientScript->registerScript('search', "
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView',array(
-    'id'=>'auth-item-grid',
-    'dataProvider'=>$model->search(),
-    'filter'=>$model,
-    'columns'=>array(
-    	'name',
-    	'description',
-        array(
-            'class'=>'bootstrap.widgets.TbButtonColumn',
-        ),
+<?php $this->widget('zii.widgets.grid.CGridView',array(
+'id'            => 'user-grid',
+'dataProvider'  => $model->search(),
+'filter'        => $model,
+'rowCssClass'   => array(),
+'itemsCssClass' => 'table table-hover table-bordered',
+'columns'       => array(
+    'name',
+    'description',
+    // Show a column with 3 icons as buttons
+    array(
+        'class'         => 'zii.widgets.grid.CButtonColumn',
+        'htmlOptions'   => array('style' => 'white-space: nowrap'),
+        'afterDelete'   => 'function(link,success,data) { if (success && data) alert(data); }',
+        'buttons'       => array(
+            'view'      => array(
+                'options'       => array('class' => 'icon-eye-open', 'rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'View')),
+                'label'         => false,
+                'imageUrl'      => false,
+            ),
+            'update'      => array(
+                'options'       => array('class' => 'icon-pencil', 'rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Update')),
+                'label'         => false,
+                'imageUrl'      => false,
+            ),
+            'delete'      => array(
+                'options'       => array('class' => 'icon-remove', 'rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Delete')),
+                'label'         => false,
+                'imageUrl'      => false,
+            )
+        )
     ),
+),
 )); ?>

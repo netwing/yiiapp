@@ -66,7 +66,7 @@ class FontAwesome extends CApplicationComponent
                 $excludeFiles, 
                 array('.git', 'gitignore', '.ruby-version', 'CONTRIBUTING.md', 'Gemfile', 'Gemfile.lock', 'README.md', '_config.yml', 'composer.json', 'less', 'package.json', 'scss', 'src')
             );
-            $assetsPath = Yii::getPathOfAlias('application.vendors.font-awesome');
+            $assetsPath = Yii::getPathOfAlias('bower.font-awesome');
             $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
             // Reset default exclude files
             Yii::app()->assetManager->excludeFiles = $excludeFiles;

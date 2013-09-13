@@ -40,8 +40,9 @@ class ELanguagePicker extends CPortlet
     public $dropDownOptions = array(
         'submit'=>'',
         'csrf'=>true, 
-        'class'=>'languageSelector' , 
+        'class'=>'form-control input-sm languageSelector' , 
         'id'=>'languageSelector',
+        'style' => 'width: 150px',
     );
 
     /**

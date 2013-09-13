@@ -38,7 +38,8 @@ $config = array(
     
     // path aliases
     'aliases' => array(
-        'bootstrap' => realpath(__DIR__ . '/../extensions/yiistrap'),
+        'bootstrap' => realpath(__DIR__ . '/../extensions/netwing/bootstrap'),
+        'bower'     => realpath(__DIR__ . '/../../bower_components'),
     ),
 
     // preloading 'log' component
@@ -48,26 +49,23 @@ $config = array(
 
     // autoloading model and component classes
     'import'    => array(
+        'ext.giix-components.*', // giix components
         'application.models.*',
         'application.components.*',
-        'application.modules.rights.*', 
-        'application.modules.rights.components.*',
-        'bootstrap.helpers.TbHtml',
     ),
 
     'modules'   => array(
 
         'admin',
         'example',
-        'rights',
-
+        
         // Yii code generator
         'gii' => array(
             'class'             => 'system.gii.GiiModule',
             'password'          => 'develop',
             'generatorPaths'    => array(
-                'bootstrap.gii',
-                'application.gii'
+                'application.gii',
+                'ext.giix-core', // giix generators,
             ),
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             // Default to only local net 192.168.*.* and localhost
@@ -128,7 +126,7 @@ $config = array(
 
                 // Debug toolbar
                 'toolbar' => array(
-                    'class'     => 'ext.yii-debug-toolbar.yii-debug-toolbar.YiiDebugToolbarRoute',
+                    'class'     => 'webroot.vendor.malyshev.yii-debug-toolbar.yii-debug-toolbar.YiiDebugToolbarRoute',
                     'ipFilters' => array('10.*', '192.168.*', '::1'),
                     'enabled'   => false,
                 ),
@@ -177,8 +175,7 @@ $config = array(
 
         // *** THIRD PARTY COMPONENTS
         'bootstrap'     => array(
-            // 'class'     => 'bootstrap.components.TbApi',
-            'class'     => 'ext.netwing.yiistrap.Yiistrap',
+            'class'     => 'ext.netwing.bootstrap.Bootstrap',
         ),
 
         'swiftMailer'   => array(

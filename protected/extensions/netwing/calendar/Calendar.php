@@ -85,7 +85,7 @@ class Calendar extends CApplicationComponent
         if (isset($this->_assetsUrl)) {
             return $this->_assetsUrl;
         } else {
-            $assetsPath = Yii::getPathOfAlias('application.vendors.fullcalendar');
+            $assetsPath = Yii::getPathOfAlias('bower.fullcalendar');
             $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
             return $this->_assetsUrl = $assetsUrl;
         }

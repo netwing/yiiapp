@@ -9,7 +9,7 @@ define('YII_TRACE_LEVEL', $yiic_trace_level);
 
 // *** YII FRAMEWORK LOAD ***
 // Include base yii class
-require_once dirname(__FILE__) . '/../yii/framework/yii.php';
+require_once dirname(__FILE__) . '/../vendor/yiisoft/yii/framework/yii.php';
 
-$yiic=dirname(__FILE__).'/../yii/framework/yiic.php';
+$yiic=dirname(__FILE__).'/../vendor/yiisoft/yii/framework/yiic.php';
 require_once($yiic);

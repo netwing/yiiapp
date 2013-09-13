@@ -1,0 +1,21 @@
+{
+    "require": {
+        "behat/behat": "2.4.*@stable",
+        "behat/mink": "1.4.*@stable",
+        "behat/mink-extension": "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-selenium2-driver": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "phpunit/php-invoker": "*",
+        "phpunit/dbunit": ">=1.2",
+        "phpunit/phpunit-selenium": "dev-master",
+        "phpunit/phpunit-story": "dev-master"  
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
+

@@ -76,14 +76,14 @@ class Timepicker extends CApplicationComponent
      * Returns the url to the published assets folder.
      * @return string the url.
      */
-    protected function getAssetsUrl()
+    public function getAssetsUrl()
     {
         if (isset($this->_assetsUrl)) {
             return $this->_assetsUrl;
         } else {
             // Save default exclude files
             $excludeFiles = Yii::app()->assetManager->excludeFiles;
-            $assetsPath = Yii::getPathOfAlias('application.vendors.timepicker.dist');
+            $assetsPath = Yii::getPathOfAlias('bower.jquery-timepicker-addon');
             $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
             return $this->_assetsUrl = $assetsUrl;
         }

@@ -3,8 +3,7 @@
     "description": "Netwing skeleton",
     "license": "proprietary",
     "require": {
-        "yiisoft/yii": "dev-master",
-        "crisu83/yiistrap": "dev-master",
+        "yiisoft/yii": "1.1.*",
         "malyshev/yii-debug-toolbar": "dev-master",
         "predis/predis": "0.8.*@dev",
         "mtdowling/cron-expression": "dev-master",

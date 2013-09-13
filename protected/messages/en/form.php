@@ -17,10 +17,19 @@
  * NOTE, this file must be saved in UTF-8 encoding.
  */
 return array (
-  'Il nome utente non può essere modificato.' => '',
-  'Il ruolo Admin avrà accesso sia alla gestione dati statistici sia alla gestione utenti.' => '',
-  'Inserire il nome utente che sarà utilizzato per autenticarsi.' => '',
-  'Inserire la password che sarà utilizzata per autenticarsi.' => '',
-  'Inserire un nome identificativo per questo utente.' => '',
-  'Inserire una nuova password o lasciare il campo vuoto per non modificare la password.' => '',
+  'Insert a new password or leave empty for no change' => '',
+  'My Date' => '',
+  'My Time' => '',
+  'Reset' => '',
+  'Role for \'administrator\' cannot be changed.' => '',
+  'Role name cannot be changed' => '',
+  'Select one or more roles for this user.' => '',
+  'Set permissions for this role.' => '',
+  'Submit' => '',
+  'The login name for this user' => '',
+  'The login password for this user' => '',
+  'The name for this role' => '',
+  'The name for this user' => '',
+  'Type or select roles for this user.' => '',
+  'Username cannot be changed' => '',
 );

@@ -1,101 +1,51 @@
 <?php
 
-/**
- * This is the model class for table "{{user}}".
- *
- * The followings are the available columns in table '{{user}}':
- * @property string $id
- * @property string $name
- * @property string $username
- * @property string $password
- * @property string $role
- * @property string $tstamp
- */
-class User extends CActiveRecord
+Yii::import('application.modules.admin.models._base.BaseUser');
+
+class User extends BaseUser
 {
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return User the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+    public static function model($className=__CLASS__) {
+        return parent::model($className);
+    }
 
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return '{{user}}';
-	}
-
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules()
+    {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
             array('name, username, password', 'required', 'on' => 'create'),
             array('role', 'required'),
-			array('name, username, password', 'length', 'max'=>255),
+            array('name, username, password', 'length', 'max'=>255),
             array('username, password', 'length', 'min'=>8),
             array('username', 'unique', 'on' => 'create'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('name, username', 'safe', 'on'=>'search'),
-		);
-	}
+            // The following rule is used by search().
+            // Please remove those attributes that should not be searched.
+            array('name, username', 'safe', 'on'=>'search'),
+        );
+    }
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-            // 'admin_count' => array(self::STAT, "User", 'select' => 'COUNT(*)', 'condition' => "role = 'admin'"),
-		);
-	}
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+     */
+    public function search()
+    {
+        // Warning: Please modify the following code to remove attributes that
+        // should not be searched.
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => Yii::t('model', 'ID'),
-            'name' => Yii::t('model', 'Name'),
-			'username' => Yii::t('model', 'Username'),
-			'password' => Yii::t('model', 'Password'),
-			'role' => Yii::t('model', 'Role'),
-			'tstamp' => Yii::t('model', 'Tstamp'),
-		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
-		$criteria=new CDbCriteria;
+        $criteria=new CDbCriteria;
 
         $criteria->compare('name',$this->name,true);
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('role',$this->role,true);
+        $criteria->compare('username',$this->username,true);
+        $criteria->compare('role',$this->role,true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
+        return new CActiveDataProvider($this, array(
+            'criteria'=>$criteria,
+        ));
+    }
 
     public function beforeSave()
     {

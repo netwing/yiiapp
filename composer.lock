@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0f5ec701881b0ccb875cab2ca94ab19e",
+    "hash": "aa2393c907b56cc5f411aa955b448ec5",
     "packages": [
         {
             "name": "behat/behat",
@@ -407,6 +407,82 @@
             "time": "2013-04-13 12:56:28"
         },
         {
+            "name": "behat/yii-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/YiiExtension.git",
+                "reference": "2ce4679ee89ee88ac8f8ca7a56c863a6e15fb7b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/YiiExtension/zipball/2ce4679ee89ee88ac8f8ca7a56c863a6e15fb7b6",
+                "reference": "2ce4679ee89ee88ac8f8ca7a56c863a6e15fb7b6",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": ">=2.4.0,<2.4.x-dev",
+                "php": ">=5.3.2"
+            },
+            "type": "behat-extension",
+            "autoload": {
+                "psr-0": {
+                    "Behat\\YiiExtension": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Yii framework extension for Behat",
+            "homepage": "http://mink.behat.org",
+            "keywords": [
+                "BDD",
+                "framework",
+                "web"
+            ],
+            "time": "2013-05-30 13:45:46"
+        },
+        {
+            "name": "claylo/selenium-server-standalone",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/claylo/selenium-server-standalone.git",
+                "reference": "8ceae6ce2b2257e7f0cee573640e77a3591af111"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/claylo/selenium-server-standalone/zipball/8ceae6ce2b2257e7f0cee573640e77a3591af111",
+                "reference": "8ceae6ce2b2257e7f0cee573640e77a3591af111",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "OpenQA",
+                    "homepage": "http://seleniumhq.org/"
+                }
+            ],
+            "description": "Composer distribution of Selenium Server Standalone, the browser automation framework.",
+            "keywords": [
+                "selenium",
+                "testing"
+            ],
+            "time": "2013-04-17 02:08:23"
+        },
+        {
             "name": "codeplex/phpexcel",
             "version": "dev-master",
             "source": {
@@ -455,55 +531,6 @@
                 "spreadsheet"
             ],
             "time": "2013-06-13 17:41:00"
-        },
-        {
-            "name": "crisu83/yiistrap",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Crisu83/yiistrap.git",
-                "reference": "d8c1e959f133bf9a03e776f23ff672a64a2c6208"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Crisu83/yiistrap/zipball/d8c1e959f133bf9a03e776f23ff672a64a2c6208",
-                "reference": "d8c1e959f133bf9a03e776f23ff672a64a2c6208",
-                "shasum": ""
-            },
-            "require-dev": {
-                "codeception/codeception": "@stable",
-                "crisu83/yii-composer": "dev-master",
-                "php": ">=5.3.0",
-                "yiisoft/yii": "1.1.13"
-            },
-            "type": "library",
-            "extra": {
-                "yii-install-writable": [
-                    "tests/_log"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Christoffer Niska",
-                    "email": "christoffer.niska@gmail.com",
-                    "homepage": "http://www.cniska.net/"
-                },
-                {
-                    "name": "Antonio Ramirez",
-                    "email": "ramirez.cobos@gmail.com",
-                    "homepage": "http://www.ramirezcobos.com/"
-                }
-            ],
-            "description": "Twitter Bootstrap for the Yii PHP framework.",
-            "keywords": [
-                "bootstrap",
-                "yii"
-            ],
-            "time": "2013-09-06 08:48:52"
         },
         {
             "name": "fabpot/goutte",
@@ -1596,16 +1623,16 @@
         },
         {
             "name": "yiisoft/yii",
-            "version": "dev-master",
+            "version": "1.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii.git",
-                "reference": "550a7422162cb30d4eb9b4abb0c29d086b6e1020"
+                "reference": "f0fee98ee84f70f1f3652f65562c9670e919cb4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii/zipball/550a7422162cb30d4eb9b4abb0c29d086b6e1020",
-                "reference": "550a7422162cb30d4eb9b4abb0c29d086b6e1020",
+                "url": "https://api.github.com/repos/yiisoft/yii/zipball/f0fee98ee84f70f1f3652f65562c9670e919cb4e",
+                "reference": "f0fee98ee84f70f1f3652f65562c9670e919cb4e",
                 "shasum": ""
             },
             "require": {
@@ -1676,7 +1703,7 @@
                 "framework",
                 "yii"
             ],
-            "time": "2013-09-13 06:11:21"
+            "time": "2013-08-12 00:12:08"
         }
     ],
     "packages-dev": [
@@ -2268,8 +2295,6 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "yiisoft/yii": 20,
-        "crisu83/yiistrap": 20,
         "malyshev/yii-debug-toolbar": 20,
         "predis/predis": 20,
         "mtdowling/cron-expression": 20,
@@ -2277,6 +2302,8 @@
         "codeplex/phpexcel": 20,
         "behat/behat": 0,
         "behat/mink": 0,
+        "behat/yii-extension": 20,
+        "claylo/selenium-server-standalone": 20,
         "phpunit/phpunit-selenium": 20,
         "phpunit/phpunit-story": 20
     },
