@@ -1331,12 +1331,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "d38523224d1efb10056ba375dd25efb1f2d46434"
+                "reference": "f86ac04039d0f529ef5ad572b9014453975bc3ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/d38523224d1efb10056ba375dd25efb1f2d46434",
-                "reference": "d38523224d1efb10056ba375dd25efb1f2d46434",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/f86ac04039d0f529ef5ad572b9014453975bc3ad",
+                "reference": "f86ac04039d0f529ef5ad572b9014453975bc3ad",
                 "shasum": ""
             },
             "require": {
@@ -1376,7 +1376,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-19 20:44:22"
+            "time": "2013-09-13 15:15:57"
         },
         {
             "name": "symfony/filesystem",

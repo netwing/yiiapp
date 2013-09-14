@@ -1,6 +1,7 @@
-stats
-error
-robots.txt
-bower_components
-components
-vendor
+/stats
+/error
+/robots.txt
+/bin
+/bower_components
+/components
+/vendor

@@ -26,7 +26,7 @@
     },
     "minimum-stability": "dev",
     "config": {
-        "bin-dir": "protected/bin/"
+        "bin-dir": "bin/"
     }
 }
 
