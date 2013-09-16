@@ -5,3 +5,4 @@
 /bower_components
 /components
 /vendor
+/protected/node/node_modules

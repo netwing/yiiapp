@@ -45,7 +45,9 @@ define('REDIS_DATABASE', 0);
 define('REDIS_KEY_PREFIX', 'YIIAPP:');
 
 // Node.js socket.io configuration
+// URL of node server at which the browser must connect
 define("NODE_SERVER", null);
+// Port of node server at which the browser must connect
 define("NODE_PORT", null);
 
 // APPLICATION settings
