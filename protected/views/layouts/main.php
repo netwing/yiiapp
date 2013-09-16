@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/yiiapp/index.php"><?php echo APPLICATION_NAME; ?></a>
+            <a class="navbar-brand" href="<?php echo $this->createUrl('/'); ?>"><?php echo APPLICATION_NAME; ?></a>
         </div>
         <div class="navbar-collapse collapse" id="yw3">
             <ul id="yw1" class="nav navbar-nav" role="menu">
