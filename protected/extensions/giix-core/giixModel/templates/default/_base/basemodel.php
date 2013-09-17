@@ -60,7 +60,7 @@ abstract class <?php echo $this->baseModelClass; ?> extends <?php echo $this->ba
 	}
 
 	public function tableName() {
-		return '<?php echo $tableName; ?>';
+		return '{{<?php echo $tableName; ?>}}';
 	}
 
 	public static function label($n = 1) {
