@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "aa2393c907b56cc5f411aa955b448ec5",
+    "hash": "b6461a42b9879d7ee213ca1536fb61f4",
     "packages": [
         {
             "name": "behat/behat",
@@ -1009,18 +1009,67 @@
             "time": "2013-08-31 08:51:10"
         },
         {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v5.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "f3917ecef35a4e4d98b303eb9fee463bc983f379"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/f3917ecef35a4e4d98b303eb9fee463bc983f379",
+                "reference": "f3917ecef35a4e4d98b303eb9fee463bc983f379",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Chris Corbyn"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "http://swiftmailer.org",
+            "keywords": [
+                "mail",
+                "mailer"
+            ],
+            "time": "2013-08-30 12:35:21"
+        },
+        {
             "name": "symfony/browser-kit",
             "version": "dev-master",
             "target-dir": "Symfony/Component/BrowserKit",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/BrowserKit.git",
-                "reference": "3cb8886c463f8c3c2004ca97b0e71c5c9806e425"
+                "reference": "d33c227e06efa445789452fb676d11e9429ad33a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/BrowserKit/zipball/3cb8886c463f8c3c2004ca97b0e71c5c9806e425",
-                "reference": "3cb8886c463f8c3c2004ca97b0e71c5c9806e425",
+                "url": "https://api.github.com/repos/symfony/BrowserKit/zipball/d33c227e06efa445789452fb676d11e9429ad33a",
+                "reference": "d33c227e06efa445789452fb676d11e9429ad33a",
                 "shasum": ""
             },
             "require": {
@@ -1061,7 +1110,7 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-06 18:21:06"
+            "time": "2013-09-18 07:05:46"
         },
         {
             "name": "symfony/config",
@@ -1070,12 +1119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "e7e4a6d70c002f714805f23d29c4ccc018e953a4"
+                "reference": "2e82e45de1a1af3fe9ad3b96103b2bf680345549"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/e7e4a6d70c002f714805f23d29c4ccc018e953a4",
-                "reference": "e7e4a6d70c002f714805f23d29c4ccc018e953a4",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/2e82e45de1a1af3fe9ad3b96103b2bf680345549",
+                "reference": "2e82e45de1a1af3fe9ad3b96103b2bf680345549",
                 "shasum": ""
             },
             "require": {
@@ -1109,7 +1158,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-13 13:40:07"
+            "time": "2013-09-18 12:22:34"
         },
         {
             "name": "symfony/console",
@@ -1118,12 +1167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "8b3d2627cc923f07bac5bb9fdc0622363ce1369b"
+                "reference": "f6635551e5bdcb37f6b0ce5d04e1998dfe03030e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/8b3d2627cc923f07bac5bb9fdc0622363ce1369b",
-                "reference": "8b3d2627cc923f07bac5bb9fdc0622363ce1369b",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/f6635551e5bdcb37f6b0ce5d04e1998dfe03030e",
+                "reference": "f6635551e5bdcb37f6b0ce5d04e1998dfe03030e",
                 "shasum": ""
             },
             "require": {
@@ -1162,7 +1211,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-13 12:20:47"
+            "time": "2013-09-18 07:05:46"
         },
         {
             "name": "symfony/css-selector",
@@ -1222,12 +1271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DependencyInjection.git",
-                "reference": "f026d008eb7c0afdf75c6a236d535d79ee021ac7"
+                "reference": "cfdcb0efe3f90d88eed852537e6b448ca5d9a58c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/f026d008eb7c0afdf75c6a236d535d79ee021ac7",
-                "reference": "f026d008eb7c0afdf75c6a236d535d79ee021ac7",
+                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/cfdcb0efe3f90d88eed852537e6b448ca5d9a58c",
+                "reference": "cfdcb0efe3f90d88eed852537e6b448ca5d9a58c",
                 "shasum": ""
             },
             "require": {
@@ -1269,7 +1318,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-12 12:59:51"
+            "time": "2013-09-18 07:05:46"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1278,12 +1327,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "b7e5d347a5c22d170616244bd015f7446ce43341"
+                "reference": "6ed800284d21293cd921644d599d9e28a90e91a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/b7e5d347a5c22d170616244bd015f7446ce43341",
-                "reference": "b7e5d347a5c22d170616244bd015f7446ce43341",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/6ed800284d21293cd921644d599d9e28a90e91a0",
+                "reference": "6ed800284d21293cd921644d599d9e28a90e91a0",
                 "shasum": ""
             },
             "require": {
@@ -1322,7 +1371,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-19 20:44:22"
+            "time": "2013-09-18 07:05:46"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1479,12 +1528,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "ba3568aae3622076b26f35f97aa3033a4cab7798"
+                "reference": "3d8287117bb7c638a0164cf4ac471256a30e0620"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/ba3568aae3622076b26f35f97aa3033a4cab7798",
-                "reference": "ba3568aae3622076b26f35f97aa3033a4cab7798",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/3d8287117bb7c638a0164cf4ac471256a30e0620",
+                "reference": "3d8287117bb7c638a0164cf4ac471256a30e0620",
                 "shasum": ""
             },
             "require": {
@@ -1517,7 +1566,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-12 12:59:51"
+            "time": "2013-09-18 07:05:46"
         },
         {
             "name": "symfony/translation",
@@ -1526,12 +1575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "d204e9c4836c7ed910438c407c75f7f86157d53d"
+                "reference": "a80d4b3d246a5128a172e0f6e714c7b4d74d4731"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/d204e9c4836c7ed910438c407c75f7f86157d53d",
-                "reference": "d204e9c4836c7ed910438c407c75f7f86157d53d",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/a80d4b3d246a5128a172e0f6e714c7b4d74d4731",
+                "reference": "a80d4b3d246a5128a172e0f6e714c7b4d74d4731",
                 "shasum": ""
             },
             "require": {
@@ -1572,7 +1621,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-29 06:54:01"
+            "time": "2013-09-18 07:05:46"
         },
         {
             "name": "symfony/yaml",
@@ -2061,12 +2110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "551d18555488f385aea9dfb33f2ba3fe6f3050f8"
+                "reference": "4b024e753e3421837afbcca962c8724c58b39376"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/551d18555488f385aea9dfb33f2ba3fe6f3050f8",
-                "reference": "551d18555488f385aea9dfb33f2ba3fe6f3050f8",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4b024e753e3421837afbcca962c8724c58b39376",
+                "reference": "4b024e753e3421837afbcca962c8724c58b39376",
                 "shasum": ""
             },
             "require": {
@@ -2127,7 +2176,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-09-13 05:00:10"
+            "time": "2013-09-16 03:09:52"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2193,12 +2242,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-selenium.git",
-                "reference": "9e380660ce4a0d9aad617c8f91c1b2623f8f02d0"
+                "reference": "fa44a0a658ac183141cedbf9dfb9009d675432b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-selenium/zipball/9e380660ce4a0d9aad617c8f91c1b2623f8f02d0",
-                "reference": "9e380660ce4a0d9aad617c8f91c1b2623f8f02d0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-selenium/zipball/fa44a0a658ac183141cedbf9dfb9009d675432b9",
+                "reference": "fa44a0a658ac183141cedbf9dfb9009d675432b9",
                 "shasum": ""
             },
             "require": {
@@ -2239,7 +2288,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-09-07 11:33:44"
+            "time": "2013-09-15 08:30:01"
         },
         {
             "name": "phpunit/phpunit-story",

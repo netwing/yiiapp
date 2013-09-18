@@ -6,4 +6,7 @@ else
     Xvfb :99 -ac 2>/dev/null &
 fi
 export DISPLAY=:99
-java -jar ../vendor/claylo/selenium-server-standalone/selenium-server-standalone-2.32.0.jar
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+MYJARFILE="$DIR/../vendor/claylo/selenium-server-standalone/selenium-server-standalone-2.32.0.jar"
+java -jar $MYJARFILE

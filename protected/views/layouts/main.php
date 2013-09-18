@@ -62,6 +62,7 @@
                             <li><a tabindex="-1" href="<?php echo $this->createUrl('/example/default/calendar'); ?>"><?php echo Yii::t('menu', 'Calendar'); ?></a></li>
                             <li><a tabindex="-1" href="<?php echo $this->createUrl('/example/default/node'); ?>"><?php echo Yii::t('menu', 'Node JS'); ?></a></li>
                             <li><a tabindex="-1" href="<?php echo $this->createUrl('/example/default/dnd'); ?>"><?php echo Yii::t('menu', 'Drag & drop'); ?></a></li>
+                            <li><a tabindex="-1" href="<?php echo $this->createUrl('/example/default/email', array('send' => 1)); ?>"><?php echo Yii::t('menu', 'Send email'); ?></a></li>
                             <li><a target="_blank" tabindex="-1" href="<?php echo $this->createUrl('/example/pdf/download'); ?>"><?php echo Yii::t('menu', 'PDF download'); ?></a></li>
                             <li><a target="_blank" tabindex="-1" href="<?php echo $this->createUrl('/example/excel/download'); ?>"><?php echo Yii::t('menu', 'Excel download'); ?></a></li>
                         </ul>

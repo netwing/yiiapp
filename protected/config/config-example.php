@@ -36,6 +36,12 @@ define('DB_CHARSET', "utf8");
 define('DB_ENABLE_PARAM_LOGGING', true);
 define('DB_ENABLE_PROFILING', true);
 
+// Email sending parameters
+define("EMAIL_SMTP_SERVER", null);
+define("EMAIL_SMTP_PORT", 25);
+define("EMAIL_SMTP_USERNAME", null);
+define("EMAIL_SMTP_PASSWORD", null);
+
 // REDIS Key-Value caching engine 
 // You need a running Redis server on host and port
 // you also need to know which database ID use

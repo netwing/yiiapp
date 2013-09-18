@@ -7,10 +7,12 @@ class ExcelController extends Controller
         define('EOL',(PHP_SAPI == 'cli') ? PHP_EOL : '<br />');
 
         // Import PHPExcel and resolve problem with autoloader conflict
+        /*
         spl_autoload_unregister(array('YiiBase','autoload'));
-        require_once Yii::getPathOfAlias('webroot.vendor..codeplex.phpexcel') . "/PHPExcel.php";
+        require_once Yii::getPathOfAlias('webroot.vendor.codeplex.phpexcel') . DIRECTORY_SEPARATOR . "PHPExcel.php";
         spl_autoload_register(array('PHPExcel_Autoloader', 'Load'), true, true);
         spl_autoload_register(array('YiiBase','autoload')); 
+        */
         
         // Create new PHPExcel object
         $objPHPExcel = new PHPExcel();

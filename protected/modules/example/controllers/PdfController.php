@@ -8,7 +8,7 @@ class PdfController extends Controller
         $html = $this->render('download', array(), true);
         // echo $html; Yii::app()->end();        
 
-        require_once Yii::getPathOfAlias('webroot.vendor.mpdf.mpdf') . "/mpdf.php";
+        // require_once Yii::getPathOfAlias('webroot.vendor.mpdf.mpdf') . "/mpdf.php";
 
         $mpdf = new mPDF('c',    // mode - default ''
             array(210, 297),    // format - A4, for example, default ''

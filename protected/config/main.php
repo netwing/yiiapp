@@ -174,15 +174,13 @@ $config = array(
         ),
 
         // *** THIRD PARTY COMPONENTS
+
+        // *** NETWING COMPONENTS ***
+        
+        // Custom bootstrap css and js inclusion
         'bootstrap'     => array(
             'class'     => 'ext.netwing.bootstrap.Bootstrap',
         ),
-
-        'swiftMailer'   => array(
-            'class'     => 'ext.swiftMailer.SwiftMailer',
-        ),
-
-        // *** NETWING COMPONENTS ***
 
         // Redis component - Actually using Predis for more advanced features
         'redis'         => array(
@@ -208,11 +206,6 @@ $config = array(
         // Custom formatter
         'format' => array(
             'class' => 'MyFormatter',
-        ),
-
-        // Cron
-        'cron'  => array(
-            'class' => 'ext.netwing.cron.Cron',
         ),
 
         // jQuery Full Calendar
@@ -295,3 +288,6 @@ if (REDIS_HOST === null) {
     $config['components']['redis']['database']        = REDIS_DATABASE;
     $config['components']['redis']['prefix']          = REDIS_KEY_PREFIX;    
 }
+
+// Composer autoload for all libraries
+require_once APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "vendor" . DIRECTORY_SEPARATOR . "autoload.php";
