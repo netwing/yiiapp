@@ -9,13 +9,14 @@
         "mtdowling/cron-expression": "dev-master",
         "mpdf/mpdf": "dev-master",
         "codeplex/phpexcel": "dev-master",
+        "swiftmailer/swiftmailer": ">=5.0.1",
         "behat/behat": "2.4.*@stable",
         "behat/mink": "1.4.*@stable",
         "behat/mink-extension": "*",
         "behat/mink-goutte-driver": "*",
         "behat/mink-selenium2-driver": "*",
         "behat/yii-extension": "dev-master",
-        "claylo/selenium-server-standalone": "dev-master"
+        "claylo/selenium-server-standalone": "dev-master",
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",

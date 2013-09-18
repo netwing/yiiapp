@@ -49,7 +49,6 @@ $config = array(
 
     // autoloading model and component classes
     'import'    => array(
-        'ext.giix-components.*', // giix components
         'application.models.*',
         'application.components.*',
     ),
@@ -65,8 +64,9 @@ $config = array(
             'password'          => 'develop',
             'generatorPaths'    => array(
                 'application.gii',
-                'ext.giix-core', // giix generators,
             ),
+            'newFileMode'       => 0776,
+            'newDirMode'        => 0777,
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             // Default to only local net 192.168.*.* and localhost
             'ipFilters'         => array('192.168.*.*', '127.0.0.1', '::1'),

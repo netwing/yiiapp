@@ -26,6 +26,17 @@ Yii::app()->clientScript->registerScript('search', "
 'filter'        => $model,
 'rowCssClass'   => array(),
 'itemsCssClass' => 'table table-hover table-bordered',
+'pagerCssClass'     => "col-md-12 text-right",
+'pager'             => array(
+    'header'                => '',
+    'internalPageCssClass'  => '',
+    'firstPageCssClass'     => '',
+    'lastPageCssClass'      => '',
+    'selectedPageCssClass'  => 'active',
+    'htmlOptions'   => array(
+        'class'     => 'pagination pagination-sm',
+    )
+),
 'columns'       => array(
     'name',
     'description',

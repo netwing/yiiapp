@@ -1,6 +1,6 @@
 <?php
 
-Yii::import('application.modules.admin.models._base.BaseUser');
+Yii::import('application.modules.admin.models.base.BaseUser');
 
 class User extends BaseUser
 {
