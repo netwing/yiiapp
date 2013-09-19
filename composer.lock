@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "9d25edc3bdcf06fe9b3d472c30e8f933",
+    "hash": "2e9dd5b98f369334c266595c9a0e467f",
     "packages": [
         {
             "name": "codeplex/phpexcel",
@@ -1110,6 +1110,38 @@
                 "webtest"
             ],
             "time": "2013-08-08 13:56:39"
+        },
+        {
+            "name": "netwing/selenium-server-standalone",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/netwing/selenium-server.git",
+                "reference": "23ae2c502cb4c8a6571cb16c4bc7da9d68036947"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/netwing/selenium-server/zipball/23ae2c502cb4c8a6571cb16c4bc7da9d68036947",
+                "reference": "23ae2c502cb4c8a6571cb16c4bc7da9d68036947",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "OpenQA",
+                    "homepage": "http://seleniumhq.org/"
+                }
+            ],
+            "description": "Composer distribution of Selenium Server Standalone, the browser automation framework.",
+            "keywords": [
+                "selenium",
+                "testing"
+            ],
+            "time": "2013-09-19 09:05:02"
         },
         {
             "name": "phpunit/dbunit",
@@ -2310,7 +2342,8 @@
         "behat/mink": 0,
         "behat/yii-extension": 20,
         "phpunit/phpunit-selenium": 20,
-        "phpunit/phpunit-story": 20
+        "phpunit/phpunit-story": 20,
+        "netwing/selenium-server-standalone": 20
     },
     "platform": [
 

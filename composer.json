@@ -22,7 +22,8 @@
         "phpunit/php-invoker": "*",
         "phpunit/dbunit": ">=1.2",
         "phpunit/phpunit-selenium": "dev-master",
-        "phpunit/phpunit-story": "dev-master"  
+        "phpunit/phpunit-story": "dev-master",
+        "netwing/selenium-server-standalone": "dev-master"
     },
     "minimum-stability": "stable",
     "config": {

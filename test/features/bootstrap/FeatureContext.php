@@ -83,17 +83,18 @@ class FeatureContext extends MinkContext
             if ($driver instanceof Behat\Mink\Driver\Selenium2Driver) {
                 $step = $event->getStep();
                 $path = array(
-                    'date' => date("Ymd-Hi"),
+                    'date' => date("Ymd-His"),
                     'feature' => $step->getParent()->getFeature()->getTitle(),
                     'scenario' => $step->getParent()->getTitle(),
                     'step' => $step->getType() . ' ' . $step->getText()
                 );
                 $path = preg_replace('/[^\-\.\w]/', '_', $path);
-                $filename = '/tmp/behat/' .  implode('/', $path) . '.jpg';
+                $dirname = __DIR__ . '/../../results/behat/';
+                $filename =  $dirname . implode('_', $path) . '.jpg';
  
                 // Create directories if needed
-                if (!@is_dir(dirname($filename))) {
-                    @mkdir(dirname($filename), 0775, TRUE);
+                if (!@is_dir(dirname($dirname))) {
+                    @mkdir(dirname($dirname), 0775, TRUE);
                 }
  
                 file_put_contents($filename, $driver->getScreenshot());
