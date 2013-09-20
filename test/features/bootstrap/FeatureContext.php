@@ -97,7 +97,13 @@ class FeatureContext extends MinkContext
                     @mkdir(dirname($dirname), 0775, TRUE);
                 }
  
-                file_put_contents($filename, $driver->getScreenshot());
+                if (@file_put_contents($filename, $driver->getScreenshot())) {
+                    $this->printDebug("A screenshot has been made on: ");
+                    $this->printDebug($filename);
+                } else {
+                    $this->printDebug("Unable to take screenshot, please verify that path exists and is writable:");
+                    $this->printDebug($dirname);
+                }
             }
         }
     }

@@ -9,7 +9,7 @@ Feature: Login
   Scenario: Setting locale by user
     Given I am on "/"
     And I wait for "languageSelector" to be visible
-    Then I should see "English **- English"
+    Then I should see "English - English"
     When I select "Italian - Italiano" from "languageSelector"
     And I wait for "languageSelector" to be visible
     Then I should see "Italiano - Italiano"

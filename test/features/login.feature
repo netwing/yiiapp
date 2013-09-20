@@ -10,7 +10,7 @@ Feature: Login
     When I fill in "LoginForm_username" with "john"
     And  I fill in "LoginForm_password" with "john"
     And I press "Sign in"
-    Then I should see "Incorrect username or passworda"
+    Then I should see "Incorrect username or password"
     # When I wait for "LoginForm_username" to be visible
     When I fill in "LoginForm_username" with "administrator"
     And  I fill in "LoginForm_password" with "password"

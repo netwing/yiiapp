@@ -232,11 +232,11 @@ $config = array(
 if (!file_exists(dirname(__FILE__) . '/config.php')) {
     if (PHP_SAPI == 'cli') {
         echo "*** Configuration not found! ***" . PHP_EOL;
-        echo "Please copy ./protected/config/config-example.php in ./protected/config/config.php and set the correct configuration parameters." . PHP_EOL . PHP_EOL;
+        echo "Please copy ./protected/config/config.php.example in ./protected/config/config.php and set the correct configuration parameters." . PHP_EOL . PHP_EOL;
     } else {
         echo "<html><head></head><body>";
         echo "<h1>Configuration not found!</h1>";
-        echo "<p>Please copy <strong>./protected/config/config-example.php</strong> to <strong>./protected/config/config.php</strong> and set the correct configuration parameters.</p>";
+        echo "<p>Please copy <strong>./protected/config/config.php.example</strong> to <strong>./protected/config/config.php</strong> and set the correct configuration parameters.</p>";
         echo "</body></html>";
     }
     exit;
