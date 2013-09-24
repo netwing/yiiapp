@@ -46,13 +46,16 @@ class Bootstrap extends CApplicationComponent
     public function registerCoreCss($url = null)
     {
         $fileName = YII_DEBUG ? 'bootstrap.css' : 'bootstrap.min.css';
+        $url = $this->getAssetsUrl() . '/css/' . $fileName;
+        // If we have a theme from bootswatch, publish his assets and return url of bootstrap.css or bootstrap.min.css
         if (isset(Yii::app()->theme)) {
-            if ($url === null) {
-                $url = Yii::app()->theme->getBaseUrl() . '/assets/css/' . $fileName;
-            }
-        } else {
-            if ($url === null) {
-                $url = $this->getAssetsUrl() . '/css/' . $fileName;
+            if (Yii::app()->theme->name !== 'classic') {
+                $assetsPath = Yii::getPathOfAlias('bower.bootswatch.' . Yii::app()->theme->name);
+                if (file_exists($assetsPath)) {
+                    $fileName = YII_DEBUG ? 'bootstrap.css' : 'bootstrap.min.css';
+                    $assetsPath = Yii::app()->assetManager->publish($assetsPath . DIRECTORY_SEPARATOR . $fileName, false, -1, $this->forceCopyAssets);
+                    $url = $assetsPath;
+                }
             }
         }
         Yii::app()->clientScript->registerCssFile($url);
@@ -186,7 +189,8 @@ class Bootstrap extends CApplicationComponent
         if (isset($this->_assetsUrl)) {
             return $this->_assetsUrl;
         } else {
-            $assetsPath = Yii::getPathOfAlias('bootstrap.assets');
+            // Publish bootstrap assets
+            $assetsPath = Yii::getPathOfAlias('bower.bootstrap.dist');
             $assetsUrl = Yii::app()->assetManager->publish($assetsPath, false, -1, $this->forceCopyAssets);
             return $this->_assetsUrl = $assetsUrl;
         }
