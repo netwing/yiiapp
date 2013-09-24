@@ -1,5 +1,7 @@
 # Yiiapp - Nuova applicazione Yii
 
+**Nota: MAI clonare direttamente questo repository a meno che non si voglia lavorare direttamente sullo skeleton dell'applicazione**
+
 ## Requisiti
 
 **Git** 
