@@ -1,72 +1,59 @@
-# YiiApp - Scaffolding nuova applicazione
-
----
+# Yiiapp - Nuova applicazione Yii
 
 ## Requisiti
 
-* Git [http://git-scm.com](http://git-scm.com)
-Può essere installato dal package manager della propria distribuzione
+**Git** 
 
-* Node [http://nodejs.org](http://nodejs.org)
-Scaricare ed installare il package provveduto dallo sviluppatore
+Per informazioni, visitare: [http://git-scm.com](http://git-scm.com)
 
-* Bower installato globalmente [http://bower.io](http://bower.io)
-Con i permessi di root, eseguire `npm install -g bower`
+Per installarlo:
 
-## Quick Start
+    apt-get install git
 
-Nel momento in cui si vuole creare una nuova applicazione è necessario definire il repository remoto
+**Node**
 
-    ssh git@git.netwing.it
-    git init --shared --bare /home/git/<app_name>
-    chmod -R 755 /home/git/<app_name>
+Scaricare ed installare dal sito del produttore: [http://nodejs.org](http://nodejs.org)
 
-### Clonare YiiApp per creare una nuova applicazione
+**Bower** [http://bower.io](http://bower.io)
 
-Posizionarsi nella directory *all'interno* della quale si vuole creare il progetto.
+Dopo l'installazione di **node** eseguire il seguente comando come `root`
 
-    git clone ssh://<gituser>@git.netwing.it/home/git/yiiapp-composer .
+    npm install -g bower
 
-Se la directory non è vuota, eliminare il contenuto, oppure effettuare il clone in una directory temporanea e successivamente spostare tutto dentro alla directory di lavoro.
+## Quickstart
 
-***Importantissimo: Cambiare ORIGIN alla nuova app prima di iniziare a fare delle modifiche !!!***
+Scaricare lo ZIP della nuova applicazione dal sito [https://github.com/netwing/yiiapp](https://github.com/netwing/yiiapp) cliccando sul link **Download ZIP**
 
-Settare la nuova origine
+Copiare tutti i files e le directory nella destinazione desiderata.
 
-    git remote set-url origin ssh://<gituser>@git.netwing.it/home/git/<app_name>
+**N.B.: Accertarsi di copiare anche i file nascosti che iniziano con `.`**
 
-Verificare che l'URL sia modificato in quello testé inserito
 
-    git remote show origin
-
-Ora modificare il file *protected/config/main.php* ed impostare il nome dell'applicazione, poi eseguire:
-
-    git commit -a -m "primo commit"
-    git push origin master
-
-A questo punto tutto verrà caricato sul server remoto, dove verrà creato anche il ramo master che prima non esisteva, essendo appena stato inizializzato il repository.
 
 ### Configurazione
 
-Copiare il file `protected/config/config-example.php` come `protected/config/config.php` ed inserire i propri parametri di configurazione.
-
-### Inizializzazione
-
 Tutti i comandi seguenti vanno eseguiti dalla directory *radice* della propria applicazione, generalmente è `/web/`
 
-*Assicurarsi che il db sia esistente e vuoto*
+*Assicurarsi che il database esista e sia vuoto*
+
+    cp protected/config/config.php.example protected/config/config.php
+    vim protected/config/config.php
+
+### Inizializzazione
 
     php composer.phar install
     bower install
     chmod -R 777 assets/
     chmod -R 777 protected/runtime
-    ./protected/yiic migrate
     cd protected/node/
     npm install
+    ./protected/yiic migrate
 
 Seguire le successive istruzioni a schermo per la migrazione del database.
 
 ### Credenziali predefinite applicazione
+
+Effettuare il login all'applicazione con le credenziali di default.
 
     username: admininistrator
     password: password
