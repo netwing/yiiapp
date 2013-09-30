@@ -22,5 +22,5 @@ before_script:
   - ./protected/yiic migrate --interactive=0
 
 
-script: phpunit --configuration test/phpunit.xml
+script: phpunit --configuration test/phpunit.xml test/unit
 
