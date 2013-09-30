@@ -2,7 +2,19 @@ language: php
 php:
   - 5.5
   - 5.4
+node_js:
+  - "0.10"  
+services:
+  - mysql
+  - redis
+
 before_script:
   - php composer.phar install
+  - npm install -g bower
+  - bower install
+  - mysql -e 'create database myapp_test;'
+  - cp protected/config/config.php.travis protected/config/config.php
+  - ./bin/yiic migrate up --interactive=0
+
 script: phpunit --configuration test/phpunit.xml
 
