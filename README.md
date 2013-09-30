@@ -2,6 +2,10 @@
 
 **Nota: MAI clonare direttamente questo repository a meno che non si voglia lavorare direttamente sullo skeleton dell'applicazione**
 
+## Test and Build
+
+[![Build Status](https://magnum.travis-ci.com/netwing/yiiapp.png?token=dCGHoYn7CttPxUCQyTXW&branch=master)](https://magnum.travis-ci.com/netwing/yiiapp)
+
 ## Requisiti
 
 **Git** 
