@@ -5,6 +5,7 @@
 ## Test and Build
 
 [![Build Status](https://magnum.travis-ci.com/netwing/yiiapp.png?token=dCGHoYn7CttPxUCQyTXW&branch=master)](https://magnum.travis-ci.com/netwing/yiiapp)
+[![Dependency Status](https://www.versioneye.com/user/projects/5249e671632bac45da00bba0/badge.png)](https://www.versioneye.com/user/projects/5249e671632bac45da00bba0)
 
 ## Requisiti
 
