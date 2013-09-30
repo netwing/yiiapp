@@ -31,7 +31,7 @@ before_script:
   - chmod -R 777 assets/
   - chmod -R 777 protected/runtime
   - ./protected/yiic migrate --interactive=0
-  - java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.35.0.jar &
+  - java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.35.0.jar > /dev/null &
   - sleep 5
 script: 
   - phpunit --configuration test/phpunit.xml test/unit

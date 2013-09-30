@@ -8,7 +8,6 @@ Feature: Config
   Scenario: Config file must exists
     Given I am on "/"
     Then I should not see "Configuration not found!"
-    Then print last response
 
   Scenario: Db config must be ok
     Given I am on "/"
