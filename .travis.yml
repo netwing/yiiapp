@@ -18,10 +18,10 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - sleep 3
-  - java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.35.0.jar  > /dev/null &
-  - sleep 4
 before_script:
   - php composer.phar install
+  - java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.35.0.jar  > /dev/null &
+  - sleep 4
   - npm install -g bower
   - bower install
   - cd protected/node
