@@ -12,9 +12,15 @@ before_script:
   - php composer.phar install
   - npm install -g bower
   - bower install
+  - cd protected/node
+  - npm install
+  - cd ../../
   - mysql -e 'create database myapp_test;'
   - cp protected/config/config.php.travis protected/config/config.php
-  - ./bin/yiic migrate up --interactive=0
+  - chmod -R 777 assets/
+  - chmod -R 777 protected/runtime
+  - ./protected/yiic migrate --interactive=0
+
 
 script: phpunit --configuration test/phpunit.xml
 

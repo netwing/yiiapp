@@ -49,7 +49,7 @@ Tutti i comandi seguenti vanno eseguiti dalla directory *radice* della propria a
     chmod -R 777 protected/runtime
     cd protected/node/
     npm install
-    ./protected/yiic migrate
+    ./protected/yiic migrate --interactive=0
 
 Seguire le successive istruzioni a schermo per la migrazione del database.
 
