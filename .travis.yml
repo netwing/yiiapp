@@ -20,8 +20,6 @@ before_install:
   - sleep 3
 before_script:
   - php composer.phar install
-  - java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.35.0.jar  > /dev/null &
-  - sleep 4
   - npm install -g bower
   - bower install
   - cd protected/node
@@ -33,6 +31,8 @@ before_script:
   - chmod -R 777 assets/
   - chmod -R 777 protected/runtime
   - ./protected/yiic migrate --interactive=0
+  - java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.35.0.jar &
+  - sleep 5
 script: 
   - phpunit --configuration test/phpunit.xml test/unit
   - ./bin/behat -c test/behat.yml
