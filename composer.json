@@ -25,6 +25,6 @@
         "satooshi/php-coveralls": "dev-master",
         "netwing/selenium-server-standalone": "dev-master"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "stable"
 }
 
