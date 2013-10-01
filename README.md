@@ -2,9 +2,10 @@
 
 **Nota: MAI clonare direttamente questo repository a meno che non si voglia lavorare direttamente sullo skeleton dell'applicazione**
 
-## Test and Build
+## Test and Dependency
 
-[![Build Status](https://magnum.travis-ci.com/netwing/yiiapp.png?token=dCGHoYn7CttPxUCQyTXW&branch=master)](https://magnum.travis-ci.com/netwing/yiiapp)
+[![Build Status](https://travis-ci.org/netwing/yiiapp.png?branch=master)](https://travis-ci.org/netwing/yiiapp)
+
 [![Dependency Status](https://www.versioneye.com/user/projects/5249e671632bac45da00bba0/badge.png)](https://www.versioneye.com/user/projects/5249e671632bac45da00bba0)
 
 ## Requisiti
