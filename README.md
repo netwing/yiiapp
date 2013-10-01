@@ -6,7 +6,10 @@
 
 [![Build Status](https://travis-ci.org/netwing/yiiapp.png?branch=master)](https://travis-ci.org/netwing/yiiapp)
 
+[![Coverage Status](https://coveralls.io/repos/netwing/yiiapp/badge.png?branch=master)](https://coveralls.io/r/netwing/yiiapp?branch=master)
+
 [![Dependency Status](https://www.versioneye.com/user/projects/524a84fe632bac6d87004e77/badge.png)](https://www.versioneye.com/user/projects/524a84fe632bac6d87004e77)
+
 
 ## Requisiti
 
