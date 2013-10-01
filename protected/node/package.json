@@ -1,9 +1,1 @@
-{
-    "name": "YiiApp",
-    "description": "YiiApp Skeleton",
-    "author": "Emanuele Deserti <emanuele.deserti@netwing.it>",
-    "dependencies": {
-        "socket.io": ">=0.9.16"
-    },
-    "engine": "node >= 0.10.1"
-}
+../../package.json

@@ -12,12 +12,11 @@
         "swiftmailer/swiftmailer": "v5.0.2"
     },
     "require-dev": {
-        "behat/behat": "2.4.*@stable",
-        "behat/mink": "1.4.*@stable",
+        "behat/behat": "v2.5.0",
+        "behat/mink": "v1.5.0",
         "behat/mink-extension": "*",
         "behat/mink-goutte-driver": "*",
         "behat/mink-selenium2-driver": "*",
-        "behat/yii-extension": "dev-master",
         "phpunit/phpunit": "3.7.*",
         "phpunit/php-invoker": "*",
         "phpunit/dbunit": ">=1.2",
