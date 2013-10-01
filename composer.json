@@ -26,8 +26,5 @@
         "netwing/selenium-server-standalone": "dev-master"
     },
     "minimum-stability": "stable",
-    "config": {
-        "bin-dir": "bin/"
-    }
 }
 

@@ -36,4 +36,6 @@ before_script:
   - mkdir -p test/results
 script: 
   - phpunit --configuration test/phpunit.xml test/unit
-  - ./bin/behat -c test/behat.yml
+  - ./vendor/bin/behat -c test/behat.yml
+after_script:
+  - php vendor/bin/coveralls -v
