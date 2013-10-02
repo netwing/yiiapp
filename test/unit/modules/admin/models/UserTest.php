@@ -90,6 +90,7 @@ class UserTest extends PHPUnit_Framework_TestCase
         $user = User::model()->findByPk(1);
         $role = $user->role;
         $user->role = "a string";
+        $user->password = "";
         $result = $user->save();
         $this->assertTrue($result);
         $user = User::model()->findByPk(1);
