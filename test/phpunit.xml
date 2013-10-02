@@ -26,6 +26,8 @@
         <blacklist>
             <directory>../vendor</directory>
             <directory>../test</directory>
+            <directory>../protected/modules/admin/models/base</directory>
+            <directory>../protected/models/base</directory>
         </blacklist>
     </filter>
 

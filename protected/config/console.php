@@ -33,3 +33,6 @@ unset($config['components']['log']['routes']['toolbar']);
 if (isset($config['theme'])) {
     unset($config['theme']);    
 }
+if (isset($config['components']['user'])) {
+    unset($config['components']['user']);
+}

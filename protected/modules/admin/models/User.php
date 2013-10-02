@@ -88,8 +88,10 @@ class User extends BaseUser
 
     public function beforeDelete()
     {
-        if (Yii::app()->user->getId() == $this->id) {
-            return false;
+        if (isset(Yii::app()->user)) {
+            if (Yii::app()->user->getId() == $this->id) {
+                return false;
+            }
         }
         return parent::beforeDelete();
     }
