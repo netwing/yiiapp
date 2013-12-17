@@ -3,11 +3,11 @@ $this->pageTitle = Yii::t('app', 'View role {role}', array('{role}' => $model->n
 ?>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
-'htmlOptions' => array(
-'class' => 'table table-striped table-condensed table-hover',
-),
-'data'=>$model,
-'attributes'=>array(
+    'htmlOptions' => array(
+        'class' => 'table table-striped table-condensed table-hover',
+    ),
+    'data'=>$model,
+    'attributes'=>array(
 		'name',
 		'description',
     ),

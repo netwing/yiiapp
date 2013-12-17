@@ -7,24 +7,17 @@
         "malyshev/yii-debug-toolbar": "dev-master",
         "predis/predis": "0.8.*@dev",
         "mtdowling/cron-expression": "dev-master",
-        "mpdf/mpdf": "v5.7.1",
-        "codeplex/phpexcel": "v1.7.8",
-        "swiftmailer/swiftmailer": "v5.0.2"
+        "mpdf/mpdf": ">=v5.7.1",
+        "codeplex/phpexcel": ">=v1.7.8",
+        "swiftmailer/swiftmailer": ">=v5.0.2",
+        "malyshev/yii-debug-toolbar": "dev-master"
     },
     "require-dev": {
-        "behat/behat": "v2.5.0",
-        "behat/mink": "v1.5.0",
-        "behat/mink-extension": "*",
-        "behat/mink-goutte-driver": "*",
-        "behat/mink-selenium2-driver": "*",
-        "phpunit/phpunit": "3.7.*",
-        "phpunit/php-invoker": "*",
-        "phpunit/dbunit": ">=1.2",
-        "phpunit/phpunit-selenium": "dev-master",
-        "phpunit/phpunit-story": "dev-master",
-        "satooshi/php-coveralls": "dev-master",
-        "netwing/selenium-server-standalone": "dev-master"
+        "codeception/codeception": "1.8.*",
+        "netwing/selenium-server-standalone": "dev-master",
+        "kevintweber/phpunit-markup-validators": "*",
+        "squizlabs/php_codesniffer": "1.*",
+        "satooshi/php-coveralls": "dev-master"
     },
     "minimum-stability": "stable"
 }
-

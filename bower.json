@@ -16,11 +16,11 @@
     "dependencies": {
         "bootstrap": ">=v3.0.0",
         "bootswatch": ">=v3.0.0",
-        "font-awesome": "v3.2.1",
-        "jquery-minicolors": "2.1.1",
+        "font-awesome": ">=v4.0.0",
+        "jquery-minicolors": ">=2.1.1",
         "jquery-timepicker-addon": "git://github.com/trentrichardson/jQuery-Timepicker-Addon.git",
-        "select2": "3.4.2",
-        "fullcalendar": "1.6.4",
-        "highcharts": "v3.0.5"
+        "select2": ">=3.4.2",
+        "fullcalendar": ">=1.6.4",
+        "highcharts": ">=v3.0.5"
     }
 }

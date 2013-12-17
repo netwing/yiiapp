@@ -93,6 +93,7 @@ class RoleController extends Controller
 
         // Uncomment the following line if AJAX validation is needed
         $this->performAjaxValidation($model);
+
         if (isset($_POST['AuthItem'])) {
             // Delete all child from this role
             $cmd = Yii::app()->db->createCommand("DELETE FROM {{auth_item_child}} WHERE parent = :parent")->bindValue(':parent', $model->name);

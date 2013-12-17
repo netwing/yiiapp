@@ -8,5 +8,5 @@ fi
 export DISPLAY=:99
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-MYJARFILE="$DIR/../vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.35.0.jar"
+MYJARFILE="$DIR/../vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.38.0.jar"
 java -jar $MYJARFILE

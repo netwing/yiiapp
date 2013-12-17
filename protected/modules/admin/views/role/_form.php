@@ -43,7 +43,7 @@
             $operations = array();
             $allowed = array();
             foreach ($task->children as $k => $v) {
-                $operations[$v->name] = $v->description;
+                $operations[$v->name] = Yii::t('app', $v->description);
                 if (Yii::app()->authManager->hasItemChild($model->name, $v->name)) {
                     $allowed[] = $v->name;
                 }
@@ -51,7 +51,8 @@
             $i++;
         ?>
         <div class="form-group">
-            <div class="col-lg-offset-2 col-lg-10">
+        <?php echo CHtml::label(Yii::t('app', $task->description), "authChild" . $i, array('class' => 'col-lg-2 control-label')); ?>
+            <div class="col-lg-10">
                 <?php 
                 echo CHtml::checkBoxList("authChild" . $i, $allowed, $operations, array(
                         'label' => $task->description, 

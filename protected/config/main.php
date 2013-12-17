@@ -126,7 +126,7 @@ $config = array(
 
                 // Debug toolbar
                 'toolbar' => array(
-                    'class'     => 'webroot.vendor.malyshev.yii-debug-toolbar.yii-debug-toolbar.YiiDebugToolbarRoute',
+                    'class'     => 'webroot.vendor.malyshev.yii-debug-toolbar.YiiDebugToolbarRoute',
                     'ipFilters' => array('10.*', '192.168.*', '::1'),
                     'enabled'   => false,
                 ),

@@ -1,8 +1,7 @@
-/stats
-/error
-/robots.txt
-/bin
-/bower_components
-/components
-/vendor
-/protected/node/node_modules
+stats
+error
+robots.txt
+bower_components
+components
+vendor
+protected/node/node_modules
