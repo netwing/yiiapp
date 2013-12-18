@@ -17,6 +17,7 @@
         "bootstrap": ">=v3.0.0",
         "bootswatch": ">=v3.0.0",
         "font-awesome": ">=v4.0.0",
+        "jquery-ui": "~1.10.3",
         "jquery-minicolors": ">=2.1.1",
         "jquery-timepicker-addon": "git://github.com/trentrichardson/jQuery-Timepicker-Addon.git",
         "select2": ">=3.4.2",
