@@ -27,7 +27,7 @@ define('LOG_TOOLBAR_ENABLED', false);
 // This user must be created on MySQL 
 // and granted all privileges on database
 define('DB_HOST', "127.0.0.1"); // Set this to NULL to disable database connection
-define('DB_DATABASE_NAME', "circle");
+define('DB_DATABASE_NAME', "circle_test");
 define('DB_USERNAME', "ubuntu");
 define('DB_PASSWORD', "");
 define('DB_TABLE_PREFIX', "test_");
