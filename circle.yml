@@ -48,10 +48,10 @@ test:
     - sleep 5
     - vendor/bin/codecept build
   override:
-    - vendor/bin/codecept run --html --coverage # execute test
+    - vendor/bin/codecept run --coverage --html --xml --json --tap # execute test
   post:
     - cp -Rfv tests/_log/* $CIRCLE_ARTIFACTS/.
-    - vendor/bin/coveralls 
+    - vendor/bin/coveralls -v
 # Notify to our deploy system
 #notify:
 #  webhooks:
