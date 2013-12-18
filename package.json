@@ -2,7 +2,12 @@
     "name": "YiiApp",
     "description": "YiiApp Skeleton",
     "author": "Emanuele Deserti <emanuele.deserti@netwing.it>",
-    "dependencies": {
+    "repository": { 
+        "type" : "git", 
+        "url" : "https://github.com/netwing/yiiapp.git"
+    },
+      "dependencies": {
+        "bower": ">=1.2.8",
         "socket.io": ">=0.9.16"
     },
     "engine": "node >= 0.10.1"

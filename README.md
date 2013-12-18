@@ -1,17 +1,20 @@
-# Yiiapp - Nuova applicazione Yii
+Yiiapp - Nuova applicazione Yii
+===============================
 
 **Nota: MAI clonare direttamente questo repository a meno che non si voglia lavorare direttamente sullo skeleton dell'applicazione**
 
-## Test and Dependency
+Test and Dependency
+-------------------
 
-[![Build Status](https://travis-ci.org/netwing/yiiapp.png?branch=master)](https://travis-ci.org/netwing/yiiapp)
+**Master branch:** ![master-badge](https://circleci.com/gh/netwing/yiiapp/tree/master.png)
 
 [![Coverage Status](https://coveralls.io/repos/netwing/yiiapp/badge.png?branch=master)](https://coveralls.io/r/netwing/yiiapp?branch=master)
 
 [![Dependency Status](https://www.versioneye.com/user/projects/524a84fe632bac6d87004e77/badge.png)](https://www.versioneye.com/user/projects/524a84fe632bac6d87004e77)
 
 
-## Requisiti
+Requisiti
+---------
 
 **Git** 
 
@@ -31,15 +34,18 @@ Dopo l'installazione di **node** eseguire il seguente comando come `root`
 
     npm install -g bower
 
-## Quickstart
+Se non si vuole installare bower globalmente, è possibile installarlo localmente con il comando
+
+    npm install bower
+
+Quickstart
+----------
 
 Scaricare lo ZIP della nuova applicazione dal sito [https://github.com/netwing/yiiapp](https://github.com/netwing/yiiapp) cliccando sul link **Download ZIP**
 
 Copiare tutti i files e le directory nella destinazione desiderata.
 
 **N.B.: Accertarsi di copiare anche i file nascosti che iniziano con `.`**
-
-
 
 ### Configurazione
 
@@ -71,7 +77,8 @@ Effettuare il login all'applicazione con le credenziali di default.
 
 ---
 
-## Moduli aggiuntivi
+Moduli aggiuntivi
+-----------------
 
 ### Node JS e Socket.io
 
@@ -83,59 +90,19 @@ A questo punto, effettuando il login nell'applicazione dev'essere possibile entr
 
 ---
 
-## Test funzionali e di comportamento
+Unit test ed acceptance test
+----------------------------
 
+### Test con Codeception
 
-### Test con PHPUnit
+Per eseguire tutte le suite di test, lanciare
 
-***Per eseguire i test con PHPUnit è necessario che xdebug ed il modulo pcntl di PHP sia installato***
-
-Il file di configurazione XML di PHPUnit è in `./test/phpunit.xml` ed i valori di default sono generalmente adatti a qualsiasi ambiente.
-
-Per eseguire tutti i test con PHPUnit, lanciare:
-
-    ./bin/phpunit -c test/phpunit.xml test/unit
-
-I risultati vengono salvati nel file ./test/results/logfile.tap (normale file di testo) mentre la copertura del codice viene salvata in ./test/results/index.html (visualizzabile via browser).
-
-### Test con Behat
-
-Per eseguire alcuni dei test di Behat che richiedono il browser Firefox, è necessario che sulla macchina siano installate le librerie Xcommon e che il software Xvfb sia installato. Nel caso non lo fosse, si installa con:
-
-    apt-get install xvfb
-
-A questo punto, per avviare il display virtuale con Xvfb e il server Selenium, eseguire:
-
-    cd test
-    ./start.sh
-
-Il servizio rimane attivo fintanto che la console è attiva. Per uscire, premere CTRL+C.
-Se in avvio il Selenium Server si lamenta di un _Already running_ o simili, significa che un altro è già in esecuzione, quindi si può passare all'esecuzione dei test senza problemi.
-
-Copiare il file `test/behat.yml.example` in `test/behat.yml` ed impostare la corretta configurazione del puntamento all'applicazione via http (parametro `base_url`).
-
-Per eseguire tutti i test con Behat e visualizzare i risultati a video, lanciare:
-
-    ./bin/behat -c test/behat.yml
-
-Per eseguire tutti i test ed avere il risultato in un file HTML, lanciare:
-
-    ./bin/behat -c test/behat.yml --format=html > ./results/behat.html
-
-### Comandi utili per Behat
-
-* Elenco delle regexp definite: `./bin/behat -dl`
-
-* Eseguire un singolo feature test: `./bin/behat feature/bla_bla.feature`
-    
-* Disabilitare i colori e vedere solo i problemi riscontrati: `./bin/behat --format=progress --no-ansi`
-    
-#### Guida consigliata
-
-[http://docs.behat.org/cookbook/behat_and_mink.html](http://docs.behat.org/cookbook/behat_and_mink.html)
-
+    ./vendor/bin/codecept run --coverage --html --xml --tap --json
 
 ---
+
+Altre informazioni
+------------------
 
 ### Se si aggiorna il composer.json
 

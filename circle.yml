@@ -1,5 +1,7 @@
 ## Customize the test machine
 machine:
+  environment:
+    COVERALLS_REPO_TOKEN: public
 
   timezone:
     Europe/Rome # Set the timezone
@@ -26,7 +28,7 @@ dependencies:
       - bower_components
   pre:
     - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable xdebug
-    - npm install bower
+    - npm install
     - bower install
   post:
     - cp ~/yiiapp/tests/_data/yiiapp.ispeed.local.conf /etc/apache2/sites-available
@@ -48,7 +50,7 @@ test:
     - vendor/bin/codecept run --html --coverage # execute test
   post:
     - cp -Rfv tests/_log/* $CIRCLE_ARTIFACTS/.
-
+    - vendor/bin/coveralls 
 # Notify to our deploy system
 #notify:
 #  webhooks:
