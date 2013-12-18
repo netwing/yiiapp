@@ -3,12 +3,12 @@ namespace WebGuy;
 
 class MySteps extends \WebGuy
 {
-    public function canLoginAsAdmin()
+    public function canLoginAsAdministrator()
     {
         $I = $this;
-        $I->amOnPage("login.php?ritorno=index.php");
-        $I->fillField("input[name=username]", "admin");
-        $I->fillField("input[name=password]", "password");
+        $I->amOnPage("index.php?r=site/login");
+        $I->fillField("input[id=LoginForm_username]", "administrator");
+        $I->fillField("input[id=LoginForm_password]", "password");
         $I->see("Sign in");
         $I->click("Sign in");
         $I->seeValidPage();
@@ -20,9 +20,9 @@ class MySteps extends \WebGuy
     public function cantLoginAsFakeUser()
     {
         $I = $this;
-        $I->amOnPage("login.php?ritorno=index.php");
-        $I->fillField("input[name=username]", "fakeuser");
-        $I->fillField("input[name=password]", "fakepass");
+        $I->amOnPage("index.php?r=site/login");
+        $I->fillField("input[id=LoginForm_username]", "fakeuser");
+        $I->fillField("input[id=LoginForm_password]", "fakepass");
         $I->see("Sign in");
         $I->click("Sign in");
         $I->seeValidPage();
@@ -34,7 +34,6 @@ class MySteps extends \WebGuy
         $I = $this;
         // $I->seeResponseCodeIs(200);
         $I->dontSeeAnyError();
-        $I->dontSee('SOMETHING WENT WRONG');
     }
 
     public function dontSeeAnyError()
@@ -45,6 +44,7 @@ class MySteps extends \WebGuy
         $I->dontSee("PHP error");
         $I->dontSee("PHP warning");
         $I->dontSee("PHP notice");
+        $I->dontSee("Exception");
         $I->dontSee("CException");
         $I->dontSee("CDbException");
     }
@@ -54,7 +54,6 @@ class MySteps extends \WebGuy
         $I = $this;
         // $I->canSeeResponseCodeIs(200);
         $I->cantSeeAnyError();
-        $I->cantSee('SOMETHING WENT WRONG');
     }
 
     public function cantSeeAnyError()
@@ -65,6 +64,7 @@ class MySteps extends \WebGuy
         $I->cantSee("PHP error");
         $I->cantSee("PHP warning");
         $I->cantSee("PHP notice");
+        $I->cantSee("Exception");
         $I->cantSee("CException");
         $I->cantSee("CDbException");
     }

@@ -24,7 +24,6 @@
 </head>
 
 <body>
-
 <div id="topNavbar" class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
         <div class="nabvar-header">
@@ -73,9 +72,9 @@
             <form class="navbar-form navbar-right" role="search">
               <div class="form-group">
                 <label class="sr-only" for="topNavbarMainSearch">Search</label>
-                <input type="text" class="form-control search-query input-sm" id="topNavbarMainSearch" name="search" placeholder="Search" style="width: 80px">
+                <input type="text" class="form-control search-query" id="topNavbarMainSearch" name="search" placeholder="Search" style="width: 80px">
               </div>
-              <button type="button" id="topNavbarMainSearchReset" class="btn btn-default btn-sm">x</button>
+              <button type="button" id="topNavbarMainSearchReset" class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
             </form>
             <?php endif; ?>
             <ul class="nav navbar-nav navbar-right" id="yw2" role="menu">
@@ -122,7 +121,6 @@
         </div>
         <div class="col-xs-12 col-sm-4 col-sm-pull-4" style="text-align: center">
             Copyright &copy; <?php echo date('Y'); ?> by Netwing SRL, All Rights Reserved. 
-            <br /><?php echo Yii::powered(); ?> 
         </div>
     </div>
 </div>

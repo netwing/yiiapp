@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteRule ^(.*)c3/report/clover$ index.php?c3=/c3/report/clover [QSA,L]
+RewriteRule ^(.*)c3/report/serialized$ index.php?c3=/c3/report/serialized [QSA,L]
+RewriteRule ^(.*)c3/report/html$ index.php?c3=/c3/report/html [QSA,L]
+RewriteRule ^(.*)c3/report/clean$ index.php?c3=/c3/report/clean [QSA,L]
+RewriteRule ^(.*)c3/report/clear$ index.php?c3=/c3/report/clear [QSA,L]

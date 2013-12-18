@@ -10,20 +10,28 @@ class UserTest extends \Codeception\TestCase\Test
 
     protected function _before()
     {
+        Yii::import('application.modules.admin.models.User');
     }
 
     protected function _after()
     {
     }
 
-    /**
-     * @test
-     */
-    public function label() 
+    public function testLabel() 
     {
-        $expected = "1";
-        $actual = "1";
+        // Expected result
+        $expected = "{{user}}";
+        // Get actual result
+        $model = new User();
+        $actual = $model->tableName();
+        // Assert are equals
         $this->assertEquals($expected, $actual);
     }
 
+    public function testRules()
+    {
+        $model = new User();
+        $rules = $model->rules();
+        $this->assertTrue(is_array($rules));
+    }
 }

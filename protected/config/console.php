@@ -17,7 +17,7 @@ $config['commandMap'] = array(
 // ***************************
 // *** COSTANTS DEFINITION ***
 // ***************************
-define("APPLICATION_CONSOLE", true);
+defined("APPLICATION_CONSOLE") or define("APPLICATION_CONSOLE", true);
 
 // *********************
 // *** CONFIGURATION ***

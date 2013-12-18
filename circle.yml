@@ -1,0 +1,56 @@
+## Customize the test machine
+machine:
+
+  timezone:
+    Europe/Rome # Set the timezone
+
+  # Version of ruby to use
+  php:
+    version:
+      5.4.21
+
+  # Override /etc/hosts
+  hosts:
+    circlehost: 127.0.0.1
+    yiiapp.ispeed.local: 127.0.0.1
+
+## Customize checkout
+#checkout:
+# post:
+# - php composer.phar install --prefer-source --no-interaction
+
+## Customize dependencies
+dependencies:
+  cache_directories:
+      - vendor # relative to the build directory
+      - bower_components
+  pre:
+    - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable xdebug
+    - npm install bower
+    - bower install
+  post:
+    - cp ~/yiiapp/tests/_data/yiiapp.ispeed.local.conf /etc/apache2/sites-available
+    - a2ensite yiiapp.ispeed.local.conf
+    - sudo service apache2 restart
+
+## Customize test commands
+test:
+  pre:
+    - chmod -R 777 assets/
+    - chmod -R 777 protected/runtime/
+    - ./protected/yiic migrate --interactive=0
+    - cp tests/acceptance.suite.yml.ci tests/acceptance.suite.yml
+    - echo "SELENIUM LOG FILE" > $CIRCLE_ARTIFACTS/selenium.log
+    - nohup bash -c "java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.38.0.jar >> $CIRCLE_ARTIFACTS/selenium.log 2>&1 &" > /dev/null
+    - sleep 5
+    - vendor/bin/codecept build
+  override:
+    - vendor/bin/codecept run --html --coverage # execute test
+  post:
+    - cp -Rfv tests/_log/* $CIRCLE_ARTIFACTS/.
+
+# Notify to our deploy system
+#notify:
+#  webhooks:
+    # A list of hook hashes, containing the url field
+#    - url: http://git.netwing.it/circle/yiiapp/index.php

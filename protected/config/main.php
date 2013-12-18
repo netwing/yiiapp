@@ -289,5 +289,11 @@ if (REDIS_HOST === null) {
     $config['components']['redis']['prefix']          = REDIS_KEY_PREFIX;    
 }
 
+define("_MPDF_TEMP_PATH", APPLICATION_PATH . DIRECTORY_SEPARATOR . 'runtime' . DIRECTORY_SEPARATOR . 'mpdf' . DIRECTORY_SEPARATOR);
+if (!file_exists(_MPDF_TEMP_PATH)) {
+    mkdir(_MPDF_TEMP_PATH);
+    chmod(_MPDF_TEMP_PATH, 0777);
+}
+
 // Composer autoload for all libraries
 require_once APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "vendor" . DIRECTORY_SEPARATOR . "autoload.php";

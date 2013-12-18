@@ -15,5 +15,5 @@ modules:
         - WebHelper
     config:
         WebDriver:
-             url: 'http://yiiapp1.ispeed.local/'
+             url: 'http://yiiapp.ispeed.local/'
              browser: 'firefox'

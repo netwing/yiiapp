@@ -38,20 +38,28 @@ $('.search-button').click(function(){
         'class'         => 'zii.widgets.grid.CButtonColumn',
         'htmlOptions'   => array('style' => 'white-space: nowrap'),
         'afterDelete'   => 'function(link,success,data) { if (success && data) alert(data); }',
+        // 'template'      => '{plus} {view} {update} {delete}',
         'buttons'       => array(
+            /*
+            'plus'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'View')),
+                'label'         => '<i class="fa fa-plus"></i>',
+                'imageUrl'      => false,
+            ),
+            */
             'view'      => array(
-                'options'       => array('class' => 'icon-eye-open', 'rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'View')),
-                'label'         => false,
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'View')),
+                'label'         => '<i class="fa fa-eye"></i>',
                 'imageUrl'      => false,
             ),
             'update'      => array(
-                'options'       => array('class' => 'icon-pencil', 'rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Update')),
-                'label'         => false,
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Update')),
+                'label'         => '<i class="fa fa-pencil"></i>',
                 'imageUrl'      => false,
             ),
             'delete'      => array(
-                'options'       => array('class' => 'icon-remove', 'rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Delete')),
-                'label'         => false,
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Delete')),
+                'label'         => '<i class="fa fa-times"></i>',
                 'imageUrl'      => false,
             )
         )

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * UserIdentity represents the data needed to identity a user.
+ * UserIdentity represents the data needed to identify a user.
  * It contains the authentication method that checks if the provided
- * data can identity the user.
+ * data can identify the user.
  */
 class UserIdentity extends CUserIdentity
 {
@@ -27,7 +27,7 @@ class UserIdentity extends CUserIdentity
             $auth = Yii::app()->authManager;
             foreach ($record->role as $k => $role) {
                 if (!$auth->isAssigned($role, $this->_id)) {
-                    $auth->assign($role,$this->_id);
+                    $auth->assign($role, $this->_id);
                 }
             }
             Yii::app()->authManager->save();

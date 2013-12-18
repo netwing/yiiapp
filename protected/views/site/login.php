@@ -29,6 +29,15 @@
             <?php echo $form->error($model,'password'); ?>
         </div>
     </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-4">
+            <div class="checkbox">
+            <?php echo $form->checkBox($model, 'rememberMe'); ?>
+            <?php echo $form->labelEx($model, 'rememberMe'); ?>
+            </div>
+        </div>
+    </div>
     
     <div class="form-group">
         <div class="col-lg-offset-2 col-lg-4">

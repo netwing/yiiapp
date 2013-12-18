@@ -12,6 +12,11 @@ define('YII_TRACE_LEVEL', $yii_trace_level);
 // Include base yii class
 require_once dirname(__FILE__) . '/vendor/yiisoft/yii/framework/yii.php';
 
+if (file_exists("c3.php")) {
+    YiiBase::$enableIncludePath = false;
+    include 'c3.php';
+}
+
 // *** YII CREATE APPLICATION
 // Create application
 $app = Yii::createWebApplication($config);
