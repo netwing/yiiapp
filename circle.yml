@@ -5,9 +5,9 @@ machine:
     Europe/Rome # Set the timezone
 
   # Version of php to use
-  #php:
-  #  version:
-  #    5.4.21
+  php:
+    version:
+      5.4.21
 
   # Override /etc/hosts
   hosts:
@@ -25,8 +25,8 @@ dependencies:
       - vendor
       - bower_components
   pre:
-    - sed -i 's/^;//' ~/.phpenv/versions/5.3.10/etc/conf.d/xdebug.ini # enable xdebug
-    - echo 'xdebug.remote_enable=on' >> ~/.phpenv/versions/5.3.10/etc/conf.d/xdebug.ini # enable remote_enable
+    - sed -i 's/^;//' ~/.phpenv/versions/5.4.21/etc/conf.d/xdebug.ini # enable xdebug
+    - echo 'xdebug.remote_enable=on' >> ~/.phpenv/versions/5.4.21/etc/conf.d/xdebug.ini # enable remote_enable
     - cp ~/yiiapp/tests/_data/yiiapp.ispeed.local.conf /etc/apache2/sites-available
     - a2ensite yiiapp.ispeed.local.conf
     - a2enmod rewrite
