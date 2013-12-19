@@ -15,11 +15,11 @@ modules:
         - WebHelper
     config:
         WebDriver:
-             url: 'http://yiiapp.ispeed.local/'
+             url: 'http://yiiapp1.ispeed.local/'
              browser: 'firefox'
 coverage:
     enabled: true
-#    remote: true
+    remote: true
     whitelist:
         include: 
             - protected/commands/*
