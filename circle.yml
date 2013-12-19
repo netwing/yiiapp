@@ -38,7 +38,7 @@ test:
     - bower install
     - mkdir -p assets/ protected/runtime/ tests/_log/ c3tmp/
     - chmod -R 777 assets/ protected/runtime/ tests/_log/ c3tmp/
-    - cp protected/config/config.php.ci protected/config/config.php
+    - cp tests/_data/config.php protected/config/config.php
     - ./protected/yiic migrate --interactive=0
     - cp tests/acceptance.suite.yml.ci tests/acceptance.suite.yml
     - echo "SELENIUM LOG FILE" > $CIRCLE_ARTIFACTS/selenium.log

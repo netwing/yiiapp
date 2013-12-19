@@ -18,8 +18,8 @@ modules:
              url: 'http://yiiapp.ispeed.local:8080/'
              browser: 'firefox'
 coverage:
-    enabled: false
-    remote: false
+    enabled: true
+    remote: true
     whitelist:
         include: 
             - protected/commands/*
