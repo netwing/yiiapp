@@ -14,7 +14,7 @@ machine:
   # Override /etc/hosts
   hosts:
     circlehost: 127.0.0.1
-    yiiapp1.ispeed.local: 127.0.0.1
+    yiiapp.ispeed.local: 127.0.0.1
 
 ## Customize checkout
 #checkout:
@@ -28,7 +28,8 @@ dependencies:
       - bower_components
   pre:
     - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable xdebug
-    - echo '\nxdebug.remote_enable = On' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
+    - echo '' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
+    - echo 'xdebug.remote_enable = On' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
     - npm install
     - bower install
   post:
