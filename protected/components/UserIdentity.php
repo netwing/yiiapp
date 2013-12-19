@@ -25,7 +25,7 @@ class UserIdentity extends CUserIdentity
             $this->setState('name', $record->name);
             // Assign RBAC role
             $auth = Yii::app()->authManager;
-            foreach ($record->role as $k => $role) {
+            foreach (array_values($record->role) as $role) {
                 if (!$auth->isAssigned($role, $this->_id)) {
                     $auth->assign($role, $this->_id);
                 }
@@ -59,7 +59,7 @@ class UserIdentity extends CUserIdentity
             $this->setState('name', $username);
             // Assign RBAC role
             $auth = Yii::app()->authManager;
-            foreach ($auth->operations as $k => $o) {
+            foreach (array_keys($auth->operations) as $k) {
                 if (!$auth->isAssigned($k, $this->_id)) {
                     $auth->assign($k, $this->_id);
                 }
