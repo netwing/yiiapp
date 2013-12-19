@@ -6,9 +6,12 @@ Yiiapp - Nuova applicazione Yii
 Test and Dependency
 -------------------
 
-**Master branch:** ![master-badge](https://circleci.com/gh/netwing/yiiapp/tree/master.png)
+**Master branch:** 
+![master-badge](https://circleci.com/gh/netwing/yiiapp/tree/master.png)
 
-[![Coverage Status](https://coveralls.io/repos/netwing/yiiapp/badge.png?branch=master)](https://coveralls.io/r/netwing/yiiapp?branch=master)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/netwing/yiiapp/badges/quality-score.png?s=87f1b371bb40e3e7871f0411209cc3037edf76c2)](https://scrutinizer-ci.com/g/netwing/yiiapp/)
+
+[![Code Coverage](https://scrutinizer-ci.com/g/netwing/yiiapp/badges/coverage.png?s=9770e1bc8faa5064386e9f51570a4eb0d14860af)](https://scrutinizer-ci.com/g/netwing/yiiapp/)
 
 [![Dependency Status](https://www.versioneye.com/user/projects/524a84fe632bac6d87004e77/badge.png)](https://www.versioneye.com/user/projects/524a84fe632bac6d87004e77)
 
