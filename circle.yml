@@ -26,7 +26,7 @@ dependencies:
       - bower_components
   pre:
     - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable xdebug
-    - echo 'remote_enable=on' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
+    - echo 'xdebug.remote_enable=on' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
     - cp ~/yiiapp/tests/_data/yiiapp.ispeed.local.conf /etc/apache2/sites-available
     - a2ensite yiiapp.ispeed.local.conf
     - a2enmod rewrite
