@@ -5,7 +5,7 @@
 
 class_name: CodeGuy
 modules:
-    enabled: [CodeHelper]
+    enabled: [CodeHelper, Cli]
 coverage:
     enabled: true
     whitelist:

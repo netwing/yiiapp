@@ -4,7 +4,7 @@ machine:
   timezone:
     Europe/Rome # Set the timezone
 
-  # Version of ruby to use
+  # Version of php to use
   php:
     version:
       5.4.21
@@ -21,15 +21,12 @@ machine:
 
 ## Customize dependencies
 dependencies:
-  cache_directories:
-      - vendor # relative to the build directory
+  cache_directories: # relative to the build directory
+      - vendor
       - bower_components
   pre:
-    - npm install
-    - bower install
-  post:
     - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable xdebug
-    - echo 'xdebug.remote_enable=on' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
+    - echo 'remote_enable=on' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
     - cp ~/yiiapp/tests/_data/yiiapp.ispeed.local.conf /etc/apache2/sites-available
     - a2ensite yiiapp.ispeed.local.conf
     - a2enmod rewrite
@@ -38,6 +35,7 @@ dependencies:
 ## Customize test commands
 test:
   pre:
+    - bower install
     - mkdir -p assets/ protected/runtime/ tests/_log/ c3tmp/
     - chmod -R 777 assets/ protected/runtime/ tests/_log/ c3tmp/
     - cp protected/config/config.php.ci protected/config/config.php
@@ -53,6 +51,7 @@ test:
     - cp -Rfv tests/_log/* $CIRCLE_ARTIFACTS/.
     - wget https://scrutinizer-ci.com/ocular.phar
     - php ocular.phar code-coverage:upload --format=php-clover tests/_log/coverage.xml 
+
 # Notify to our deploy system
 #notify:
 #  webhooks:
