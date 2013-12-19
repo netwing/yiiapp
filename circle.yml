@@ -52,7 +52,7 @@ test:
   post:
     - cp -Rfv tests/_log/* $CIRCLE_ARTIFACTS/.
     - wget https://scrutinizer-ci.com/ocular.phar
-    - php ocular.phar code-coverage:upload --format=php-clover tests/_log/coverage.serialized 
+    - php ocular.phar code-coverage:upload --format=php-clover tests/_log/coverage.xml 
 # Notify to our deploy system
 #notify:
 #  webhooks:
