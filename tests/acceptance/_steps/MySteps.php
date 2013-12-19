@@ -29,6 +29,21 @@ class MySteps extends \WebGuy
         $I->see("Username not found or invalid password.");
     }
 
+    public function canLoginAsSuperUser()
+    {
+        $I = $this;
+        $I->amOnPage("index.php?r=site/login");
+        $I->fillField("input[id=LoginForm_username]", "root");
+        $I->fillField("input[id=LoginForm_password]", "root");
+        $I->see("Sign in");
+        $I->click("Sign in");
+        $I->seeValidPage();
+        $I->dontSee("Username not found or invalid password.");
+        $I->see("This account should be used for administrative purposes only.");
+        $I->see("Login successful, welcome back.");
+        $I->seeInCurrentUrl("/index.php");
+    }
+
     public function seeValidPage()
     {
         $I = $this;

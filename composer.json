@@ -16,8 +16,7 @@
         "codeception/codeception": "1.8.*",
         "netwing/selenium-server-standalone": "dev-master",
         "kevintweber/phpunit-markup-validators": "*",
-        "squizlabs/php_codesniffer": "1.*",
-        "satooshi/php-coveralls": "dev-master"
+        "squizlabs/php_codesniffer": "1.*"
     },
     "minimum-stability": "stable"
 }
