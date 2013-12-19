@@ -14,7 +14,7 @@ machine:
   # Override /etc/hosts
   hosts:
     circlehost: 127.0.0.1
-    yiiapp.ispeed.local: 127.0.0.1
+    yiiapp1.ispeed.local: 127.0.0.1
 
 ## Customize checkout
 #checkout:
@@ -28,11 +28,13 @@ dependencies:
       - bower_components
   pre:
     - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable xdebug
+    - echo '\nxdebug.remote_enable = On' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
     - npm install
     - bower install
   post:
     - cp ~/yiiapp/tests/_data/yiiapp.ispeed.local.conf /etc/apache2/sites-available
     - a2ensite yiiapp.ispeed.local.conf
+    - a2enmod rewrite
     - sudo service apache2 restart
 
 ## Customize test commands
@@ -48,7 +50,7 @@ test:
     - sleep 5
     - vendor/bin/codecept build
   override:
-    - vendor/bin/codecept run --coverage --html --xml --json --tap # execute test
+    - vendor/bin/codecept run --coverage --html --xml --json # execute test
   post:
     - cp -Rfv tests/_log/* $CIRCLE_ARTIFACTS/.
     - vendor/bin/coveralls -v
