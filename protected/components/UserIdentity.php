@@ -14,10 +14,10 @@ class UserIdentity extends CUserIdentity
         Yii::import('application.modules.admin.models.User');
         $record = User::model()->findByAttributes(array('username'=>$this->username));
         if ($record === null) {
-            $this->errorCode = self::ERROR_USERNAME_INVALID;
+            $this->errorCode = parent::ERROR_USERNAME_INVALID;
         }
         else if ($record->password !== crypt($this->password, $record->password)) {
-            $this->errorCode = self::ERROR_PASSWORD_INVALID;
+            $this->errorCode = parent::ERROR_PASSWORD_INVALID;
         } else {
             // Set some state in Yii::app()->user
             $this->_id = $record->id;
@@ -31,11 +31,11 @@ class UserIdentity extends CUserIdentity
                 }
             }
             Yii::app()->authManager->save();
-            $this->errorCode = self::ERROR_NONE;
+            $this->errorCode = parent::ERROR_NONE;
         }
 
         // IF auth error, check for root login
-        if ($this->errorCode !== self::ERROR_NONE) {
+        if ($this->errorCode !== parent::ERROR_NONE) {
             $this->checkRootLogin();
         }
         return !$this->errorCode;
@@ -65,7 +65,7 @@ class UserIdentity extends CUserIdentity
                 }
             }
             Yii::app()->authManager->save();
-            $this->errorCode = self::ERROR_NONE;
+            $this->errorCode = parent::ERROR_NONE;
             // Messages for user
             Yii::app()->user->setFlash('warning', 'This account should be used for administrative purposes only.');
             return true;

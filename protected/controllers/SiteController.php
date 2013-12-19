@@ -51,10 +51,10 @@ class SiteController extends Controller
 	 */
 	public function actionContact()
 	{
-		$model=new ContactForm;
-		if(isset($_POST['ContactForm']))
-		{
-			$model->attributes=$_POST['ContactForm'];
+		$model = new ContactForm;
+
+		if (Yii::app()->request->getPost('ContactForm') !== null) {
+			$model->attributes = Yii::app()->request->getPost('ContactForm');
 			if($model->validate())
 			{
 				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
@@ -80,16 +80,15 @@ class SiteController extends Controller
 		$model=new LoginForm;
 
 		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
+		if (Yii::app()->request->getPost('ajax') === 'login-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 
 		// collect user input data
-		if(isset($_POST['LoginForm']))
+		if (Yii::app()->request->getPost('LoginForm') !== null)
 		{
-			$model->attributes=$_POST['LoginForm'];
+			$model->attributes = Yii::app()->request->getPost('LoginForm');
 			// validate user input and redirect to the previous page if valid
 			if ($model->validate() && $model->login()) {
 				Yii::app()->user->setFlash('success', Yii::t('app', 'Login successful, welcome back.'));
