@@ -1,7 +1,5 @@
 ## Customize the test machine
 machine:
-  environment:
-    COVERALLS_REPO_TOKEN: public
 
   timezone:
     Europe/Rome # Set the timezone
@@ -27,12 +25,11 @@ dependencies:
       - vendor # relative to the build directory
       - bower_components
   pre:
-    - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable xdebug
-    - echo '' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
-    - echo 'xdebug.remote_enable = On' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
     - npm install
     - bower install
   post:
+    - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable xdebug
+    - echo 'xdebug.remote_enable=on' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
     - cp ~/yiiapp/tests/_data/yiiapp.ispeed.local.conf /etc/apache2/sites-available
     - a2ensite yiiapp.ispeed.local.conf
     - a2enmod rewrite
