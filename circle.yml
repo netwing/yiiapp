@@ -54,7 +54,8 @@ test:
     - vendor/bin/codecept run --coverage --html --xml --json # execute test
   post:
     - cp -Rfv tests/_log/* $CIRCLE_ARTIFACTS/.
-    - vendor/bin/coveralls -v
+    - wget https://scrutinizer-ci.com/ocular.phar
+    - php ocular.phar code-coverage:upload --format=php-clover tests/_log/coverage.serialized 
 # Notify to our deploy system
 #notify:
 #  webhooks:

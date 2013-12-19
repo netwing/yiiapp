@@ -1,4 +1,0 @@
-service_name: circle-ci
-src_dir: protected/
-coverage_clover: tests/_log/coverage.xml
-json_path: tests/_log/report.json
