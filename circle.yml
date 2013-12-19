@@ -48,6 +48,7 @@ test:
   override:
     - vendor/bin/codecept run --coverage --html --xml --json # execute test
   post:
+    - wget -O tests/_log/phpinfo.php "http://yiiapp.ispeed.local:8080/phpinfo.php"
     - cp -Rfv tests/_log/* $CIRCLE_ARTIFACTS/.
     - wget https://scrutinizer-ci.com/ocular.phar
     - php ocular.phar code-coverage:upload --format=php-clover tests/_log/coverage.xml 
