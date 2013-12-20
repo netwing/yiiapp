@@ -19,7 +19,6 @@ modules:
              browser: 'firefox'
 coverage:
     enabled: true
-    remote: true
     whitelist:
         include: 
             - protected/commands/*
