@@ -40,7 +40,7 @@ test:
     - chmod -R 777 assets/ protected/runtime/ tests/_log/ c3tmp/
     - cp tests/_data/config.php protected/config/config.php
     - ./protected/yiic migrate --interactive=0
-    - cp tests/acceptance.suite.yml.ci tests/acceptance.suite.yml
+    - cp tests/_data/acceptance.suite.yml tests/acceptance.suite.yml
     - echo "SELENIUM LOG FILE" > $CIRCLE_ARTIFACTS/selenium.log
     - nohup bash -c "java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.38.0.jar >> $CIRCLE_ARTIFACTS/selenium.log 2>&1 &" > /dev/null
     - sleep 5
