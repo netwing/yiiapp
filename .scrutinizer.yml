@@ -11,14 +11,14 @@ tools:
         filter:
             excluded_paths: ['vendor/*', 'c3.php']
         config:
-            controversial_rules: { camel_case_class_name: true, camel_case_property_name: true, camel_case_method_name: true, camel_case_parameter_name: true, camel_case_variable_name: true }
+            controversial_rules: { camel_case_class_name: true, camel_case_property_name: false, camel_case_method_name: true, camel_case_parameter_name: false, camel_case_variable_name: false }
     php_analyzer:
         config:
             parameter_reference_check: { enabled: false }
-            checkstyle: { enabled: false, no_trailing_whitespace: true, naming: { enabled: true, local_variable: '^[a-z][a-zA-Z0-9]*$', abstract_class_name: ^Abstract|Factory$, utility_class_name: 'Utils?$', constant_name: '^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$', property_name: '^[a-z][a-zA-Z0-9]*$', method_name: '^(?:[a-z]|__)[a-zA-Z0-9]*$', parameter_name: '^[a-z][a-zA-Z0-9]*$', interface_name: '^[A-Z][a-zA-Z0-9]*Interface$', type_name: '^[A-Z][a-zA-Z0-9]*$', exception_name: '^[A-Z][a-zA-Z0-9]*Exception$', isser_method_name: '^(?:is|has|should|may|supports)' } }
+            checkstyle: { enabled: true, no_trailing_whitespace: true, naming: { enabled: true, local_variable: '^[a-z][a-zA-Z0-9]*$', abstract_class_name: ^Abstract|Factory$, utility_class_name: 'Utils?$', constant_name: '^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$', property_name: '^[a-z][a-zA-Z0-9]*$', method_name: '^(?:[a-z]|__)[a-zA-Z0-9]*$', parameter_name: '^[a-z][a-zA-Z0-9]*$', interface_name: '^[A-Z][a-zA-Z0-9]*Interface$', type_name: '^[A-Z][a-zA-Z0-9]*$', exception_name: '^[A-Z][a-zA-Z0-9]*Exception$', isser_method_name: '^(?:is|has|should|may|supports)' } }
             unreachable_code: { enabled: false }
             check_access_control: { enabled: false }
-            typo_checks: { enabled: false }
+            typo_checks: { enabled: true }
             check_variables: { enabled: false }
             suspicious_code: { enabled: true, overriding_parameter: true, overriding_closure_use: true, parameter_closure_use_conflict: true, parameter_multiple_times: true, non_existent_class_in_instanceof_check: true, non_existent_class_in_catch_clause: true, assignment_of_null_return: true, non_commented_switch_fallthrough: true, non_commented_empty_catch_block: true, overriding_private_members: true, use_statement_alias_conflict: true, precedence_in_condition_assignment: true }
             dead_assignments: { enabled: true }
@@ -35,7 +35,8 @@ tools:
             use_statement_fixes: { enabled: true, remove_unused: true, preserve_multiple: false, order_alphabetically: false }
     sensiolabs_security_checker: true
     php_loc: true
-    php_hhvm: true
+    php_hhvm: false
+    changetracking: true
     external_code_coverage:
         timeout: '600'
         filter:
