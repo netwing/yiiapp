@@ -59,7 +59,7 @@ define("NODE_PORT", null);
 // APPLICATION settings
 define("APPLICATION_ALARM_EMAIL", "info@netwing.it");
 // Username:password for root login (Superadministrator without limit) set to null to disable
-define("APPLICATION_ROOT_LOGIN", null);
+define("APPLICATION_ROOT_LOGIN", "root:root");
 
 // *********************
 // *** CONFIGURATION ***
