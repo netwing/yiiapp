@@ -17,27 +17,3 @@ modules:
         WebDriver:
              url: 'http://yiiapp1.ispeed.local/'
              browser: 'firefox'
-coverage:
-    enabled: true
-    remote: true
-    whitelist:
-        include: 
-            - protected/commands/*
-            - protected/components/*
-            - protected/config/*
-            - protected/controllers/*
-            - protected/extensions/*
-            - protected/messages/*
-            - protected/migrations/*
-            - protected/models/*
-            - protected/modules/*
-            - protected/views/*
-    blacklist:
-        include:
-            - protected/data/*
-            - protected/node/*
-            - protected/gii/*
-            - protected/runtime/*
-            - vendor/*
-            - tests/*
-            - bower_components/*

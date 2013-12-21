@@ -1,6 +1,6 @@
 <?php
 $I = new WebGuy\MySteps($scenario);
-$I->wantTo('test login with fake user and with admin');
-$I->cantLoginAsFakeUser();
-$I->canLoginAsAdministrator();
-$I->canLoginAsSuperUser();
+$I->wantTo('test login with fake user, with admin and with root');
+// $I->cantLoginAsFakeUser();
+// $I->canLoginAsAdministrator();
+// $I->canLoginAsSuperUser();
