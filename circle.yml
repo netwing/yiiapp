@@ -42,7 +42,7 @@ test:
     - ./protected/yiic migrate --interactive=0
     - cp tests/_data/acceptance.suite.yml tests/acceptance.suite.yml
     - echo "SELENIUM LOG FILE" > $CIRCLE_ARTIFACTS/selenium.log
-    - nohup bash -c "java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.38.0.jar >> $CIRCLE_ARTIFACTS/selenium.log 2>&1 &" > /dev/null
+    - nohup bash -c "java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.39.0.jar >> $CIRCLE_ARTIFACTS/selenium.log 2>&1 &" > /dev/null
     - sleep 5
     - vendor/bin/codecept build
   override:
