@@ -1,27 +1,30 @@
 {
-    "name": "Application",
-    "version": "1.0.0",
-    "authors": [
-        "Emanuele Deserti <emanuele.deserti@netwing.it>"
-    ],
-    "license": "MIT",
-    "private": true,
-    "ignore": [
+  "name": "Application",
+  "version": "1.0.0",
+  "authors": [
+    "Emanuele Deserti <emanuele.deserti@netwing.it>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-    ],
-    "dependencies": {
-        "bootstrap": ">=v3.0.0",
-        "bootswatch": ">=v3.0.0",
-        "font-awesome": ">=v4.0.0",
-        "jquery-ui": "~1.10.3",
-        "jquery-minicolors": ">=2.1.1",
-        "jquery-timepicker-addon": "git://github.com/trentrichardson/jQuery-Timepicker-Addon.git",
-        "select2": ">=3.4.2",
-        "fullcalendar": ">=1.6.4",
-        "highcharts": ">=v3.0.5"
-    }
+  ],
+  "dependencies": {
+    "bootstrap": ">=v3.0.0",
+    "bootswatch": ">=v3.0.0",
+    "font-awesome": ">=v4.0.0",
+    "jquery-ui": "~1.10.3",
+    "jquery-minicolors": ">=2.1.1",
+    "jquery-timepicker-addon": "git://github.com/trentrichardson/jQuery-Timepicker-Addon.git",
+    "select2": ">=3.4.2",
+    "fullcalendar": ">=1.6.4",
+    "highcharts": ">=v3.0.5"
+  },
+  "resolutions": {
+    "jquery-ui": "~1.10.3"
+  }
 }
