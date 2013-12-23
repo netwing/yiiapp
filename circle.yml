@@ -21,9 +21,9 @@ machine:
 
 ## Customize dependencies
 dependencies:
-  cache_directories: # relative to the build directory
-      - vendor
-      - bower_components
+  #cache_directories: # relative to the build directory
+  #    - vendor
+  #    - bower_components
   pre:
     - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable xdebug
     - echo 'xdebug.remote_enable=on' >> ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enable remote_enable
